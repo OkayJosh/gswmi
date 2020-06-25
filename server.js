@@ -8,8 +8,7 @@ app.use(express.static(__dirname + '/dist/gswmiangular'));
 
 //send all request to index.html
 app.get('/*', function (req, res) {
-    res.sendFile(Path.join(__dirname
-        +
+    res.sendFile(path.join(__dirname +
         '/dist/gswmiangular/index.html'
     ))
 })
