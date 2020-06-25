@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angularwithdocker": {
+    "gswmiangular": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angularwithdocker",
+            "outputPath": "dist/gswmiangular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -67,18 +67,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angularwithdocker:build"
+            "browserTarget": "gswmiangular:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angularwithdocker:build:production"
+              "browserTarget": "gswmiangular:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angularwithdocker:build"
+            "browserTarget": "gswmiangular:build"
           }
         },
         "test": {
@@ -115,15 +115,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angularwithdocker:serve"
+            "devServerTarget": "gswmiangular:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angularwithdocker:serve:production"
+              "devServerTarget": "gswmiangular:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "angularwithdocker"
+  "defaultProject": "gswmiangular"
 }
