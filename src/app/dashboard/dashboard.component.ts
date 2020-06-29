@@ -1,7 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Chart } from 'chart.js';
-import { Hero } from '../hero';
-import { HeroService } from '../hero.service';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -9,9 +8,8 @@ import { HeroService } from '../hero.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit, OnDestroy  {
-  heroes: Hero[] = [];
 
-  constructor(private heroService: HeroService) { }
+  constructor() { }
 
   ngOnInit() {
     const body = document.getElementsByTagName('body')[0];
@@ -118,9 +116,5 @@ export class DashboardComponent implements OnInit, OnDestroy  {
   ngOnDestroy() {
     const body = document.getElementsByTagName('body')[0];
     body.classList.remove('landing-page');
-  }
-  getHeroes(): void {
-    this.heroService.getHeroes()
-      .subscribe(heroes => this.heroes = heroes.slice(1, 5));
   }
 }

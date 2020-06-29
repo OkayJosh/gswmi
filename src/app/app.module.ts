@@ -7,29 +7,37 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HeroesComponent } from './heroes/heroes.component';
-import { MessagesComponent } from './messages/messages.component';
+
+
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { HeroDetailComponent } from './hero-detail/hero-detail.component';
-import { LandingpageComponent } from './landingpage/landingpage.component';
+
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
+import { OurRadioComponent } from './our-radio/our-radio.component';
+import { ArticlesComponent } from './articles/articles.component';
+import { PodcastComponent } from './podcast/podcast.component';
+import { FooterComponent } from './footer/footer.component';
+import { DashboardNavComponent } from './dashboard-nav/dashboard-nav.component';
+import { RequestModalComponent } from './request-modal/request-modal.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { ArticleComponent } from './article/article.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeroesComponent,
-    MessagesComponent,
     DashboardComponent,
-    HeroDetailComponent,
-    LandingpageComponent,
     LoginComponent,
     RegisterComponent,
     NavbarComponent,    
-    HomeComponent
+    HomeComponent, 
+    OurRadioComponent, 
+    ArticlesComponent, 
+    PodcastComponent, 
+    FooterComponent, 
+    DashboardNavComponent, RequestModalComponent, ContactUsComponent, ArticleComponent,
   ],
   imports: [
     BrowserModule,

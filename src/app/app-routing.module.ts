@@ -1,20 +1,26 @@
 import { NgModule } from '@angular/core';
-import { HeroesComponent } from './heroes/heroes.component';
+
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import { RequestModalComponent } from './request-modal/request-modal.component'
+import { ContactUsComponent } from './contact-us/contact-us.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
+import { ArticlesComponent } from './articles/articles.component';
+import { ArticleComponent } from './article/article.component';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {path: 'heroes', component: HeroesComponent },
   {path: 'home', component: HomeComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'detail/:id', component: HeroDetailComponent },
+  { path: '*', redirectTo: '/home', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
+  { path: 'contact-us', component: ContactUsComponent},
+  { path: 'prayer', component: RequestModalComponent },
   { path: 'signup', component: RegisterComponent },
+  { path: 'blog', component: ArticlesComponent},
+  { path: 'blog-details', component: ArticleComponent},
 ];
 
 @NgModule({
