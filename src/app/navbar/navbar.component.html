@@ -1,7 +1,4 @@
-<router-outlet></router-outlet>
-<app-navbar></app-navbar>
-
-<!-- <nav
+<nav
   class="navbar navbar-expand-lg fixed-top navbar-transparent"
   color-on-scroll="100"
   id="navbar-top"
@@ -10,7 +7,7 @@
     <div class="navbar-translate">
       <a
         class="navbar-brand"
-        
+        routerLink='/'
         placement="bottom"
         tooltip="Designed and Coded by Creative Tim"
       >
@@ -97,9 +94,9 @@
         <li class="nav-item">
           <a
             class="nav-link"
-            href=""
+            routerLink='/dashboard'
           >
-            <button type="button" class="btn btn-primary">Podcast</button>
+            <button type="button" class="btn btn-primary">Dashboard</button>
           </a>
         </li>
         <li class="nav-item">
@@ -121,4 +118,80 @@
       </ul>
     </div>
   </div>
-</nav> -->
+</nav>
+<div class="wrapper">
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3"><h1 class="title">GSWMI•</h1></div>
+        <div class="col-md-3">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" > Home </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" > Dashboard </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" > Register </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" > Profile </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" href="">
+                Contact Us
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">
+                About Us
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">
+                Blog
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">
+                License
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h3 class="title">Follow us:</h3>
+          <div class="btn-wrapper profile">
+            <a
+              class="btn btn-icon btn-neutral btn-round btn-simple mr-1"
+              href=""
+              target="_blank"
+            >
+              <i class="fab fa-twitter"> </i>
+            </a>
+            <a
+              class="btn btn-icon btn-neutral btn-round btn-simple mr-1"
+              href=""
+              target="_blank"
+            >
+              <i class="fab fa-facebook-square"> </i>
+            </a>
+            <a
+              class="btn btn-icon btn-neutral btn-round btn-simple"
+              href=""
+              target="_blank"
+            >
+              <i class="fab fa-dribbble"> </i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>

@@ -124,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "gswmiangular"
+    }
+  },
+  "defaultProject": "gswmiangular",
+  "cli": {
+    "analytics": false
+  }
 }

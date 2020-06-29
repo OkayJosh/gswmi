@@ -1,3 +1,13 @@
+body{
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+a .list-group-item{
+  color: black;
+}
+.first-list{
+  background-color: #e44cc4;
+}
 /* DashboardComponent's private CSS styles */
 [class*='col-'] {
     float: left;
