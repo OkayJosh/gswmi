@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { Chart } from 'chart.js';
 
 
@@ -9,6 +10,7 @@ import { Chart } from 'chart.js';
 })
 export class DashboardComponent implements OnInit, OnDestroy  {
 
+  public Editor = ClassicEditor;
   constructor() { }
 
   ngOnInit() {

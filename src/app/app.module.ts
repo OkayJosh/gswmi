@@ -22,7 +22,9 @@ import { FooterComponent } from './footer/footer.component';
 import { DashboardNavComponent } from './dashboard-nav/dashboard-nav.component';
 import { RequestModalComponent } from './request-modal/request-modal.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { ArticleComponent } from './article/article.component';
+import { DashboardInfoComponent } from './dashboard-info/dashboard-info.component';
 
 
 @NgModule({
@@ -37,7 +39,7 @@ import { ArticleComponent } from './article/article.component';
     ArticlesComponent, 
     PodcastComponent, 
     FooterComponent, 
-    DashboardNavComponent, RequestModalComponent, ContactUsComponent, ArticleComponent,
+    DashboardNavComponent, RequestModalComponent, ContactUsComponent, ArticleComponent, DashboardInfoComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +47,7 @@ import { ArticleComponent } from './article/article.component';
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
+    CKEditorModule,
 
   ],
   providers: [],
