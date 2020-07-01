@@ -19,19 +19,10 @@
         <div class="container">
      
         <div class="col-lg-3 col-md-5 col-sm-12">
-          <ul class="list-group">
-            <li class="list-group-item first-list">My Account</li>
-            <a><li class="list-group-item"> Create Post</li></a>
-            <a><li class="list-group-item"> Create category</li></a>
-            <a><li class="list-group-item"> Forget Password</li></a>
-            <a><li class="list-group-item"> Logout</li></a>
-            
-
-        </ul>
+          <app-dashboard-info></app-dashboard-info>
         </div>
 
-          <div class="col-lg-7 col-md-6">
-            <app-dashboard-info></app-dashboard-info>
+          <div class="col-lg-9 col-md-6">
             <ckeditor [editor]="Editor" data="<p>Hello, world!</p>"></ckeditor>
           </div>
 
