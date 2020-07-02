@@ -25,7 +25,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { ArticleComponent } from './article/article.component';
 import { DashboardInfoComponent } from './dashboard-info/dashboard-info.component';
-
+import {UserService} from './user.service';
 
 @NgModule({
   declarations: [
@@ -50,7 +50,7 @@ import { DashboardInfoComponent } from './dashboard-info/dashboard-info.componen
     CKEditorModule,
 
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

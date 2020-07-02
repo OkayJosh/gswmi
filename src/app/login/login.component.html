@@ -1,30 +1,35 @@
 <app-navbar></app-navbar>
 <body>
-
-    <div class="pt-5 mt-5 row">
-
-    <div class="pt-5 container">
-
-        <div class="col-md-6 offset-md-3">
-    
-            <form>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Username</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Username">
-                </div>
-                
-   
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                </div>
-    
-
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </form>
-            
-        </div>
+<div class="pt-5 mt-5 row" *ngIf="!_userService.token">
+  <div class="pt-5 container">
+      <div class="col-md-6 offset-md-3">
+          <form>
+              <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" name="login-username" [(ngModel)]="user.username" id="userUsername"  placeholder="Enter Username">
+                <span *ngFor="let error of _userService.errors.username"><br />{{ error }}</span>
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" name="login-password"[(ngModel)]="user.password" id="userPassword" placeholder="Password">
+                <span *ngFor="let error of _userService.errors.password"><br />{{ error }}</span>
+              </div>
+              <button type="submit" class="btn btn-primary" (click)="login()">Submit</button>
+              <div class="col-sm-12">
+                <span *ngFor="let error of _userService.errors.non_field_errors">{{ error }}<br /></span>
+              </div>
+            </form>
+      </div>
+  </div>
+</div>
+<div class="pt-5 mt-5 row" *ngIf="_userService.token">
+  <div class="pt-5 container">
+    <div class="col-md-6 offset-md-3">
+      You are logged in as {{ _userService.username }}.<br />
+      Token Expires: {{ _userService.token_expires }}<br />
+      <button (click)="refreshToken()" type="submit" class="btn btn-primary">Refresh Token</button>
+      <button (click)="logout()" type="submit" class="btn btn-primary">Log Out</button>
     </div>
-    </div>
-    
-    </body>
+  </div>
+</div>
+</body>
