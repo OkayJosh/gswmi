@@ -25,7 +25,7 @@ export class UserService {
     this.httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
+        // 'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
       })
       
     };
