@@ -45,7 +45,7 @@ export class UserService {
  
   // Refreshes the JWT token, to extend the time the user is logged in
   public refreshToken() {
-    this.http.post('/api-token-refresh/', JSON.stringify({token: this.token}), this.httpOptions).subscribe(
+    this.http.post('https://theblogapi.herokuapp.com/api-token-auth/', JSON.stringify({token: this.token}), this.httpOptions).subscribe(
       data => {
         this.updateData(data['token']);
       },
