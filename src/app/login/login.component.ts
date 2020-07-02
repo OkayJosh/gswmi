@@ -10,7 +10,7 @@ export class LoginComponent implements OnInit {
 
   public user: any;
 
-  constructor ( public _userService: UserService ){}
+  constructor ( private _userService: UserService ){}
   ngOnInit(){
     this.user = {
       username: '',
