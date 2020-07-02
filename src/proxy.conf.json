@@ -1,0 +1,7 @@
+{
+    "/api/*": {
+        "target": "https://theblogapi.herokuapp.com",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}

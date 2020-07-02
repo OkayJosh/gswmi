@@ -1,10 +1,14 @@
+const cors = require('cors'); 
 const express = require('express');
 const path = require('path');
 const app = express();
 
+// fix to allow cross origin resource sharing
+app.use(cors());
 
 //server static files............
 app.use(express.static(__dirname + '/dist/gswmiangular'));
+
 
 //send all request to index.html
 app.get('/*', function (req, res) {
@@ -12,12 +16,6 @@ app.get('/*', function (req, res) {
         '/dist/gswmiangular/index.html'
     ))
 })
-// fix to allow cross origin resource sharing
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-   next();
-  });
 
 //default Heroku PORT
 app.listen(process.env.PORT || 3000);

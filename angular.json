@@ -71,7 +71,8 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "gswmiangular:build:production"
+              "browserTarget": "gswmiangular:build:production",
+              "proxyConfig": "src/proxy.conf.json"
             }
           }
         },
