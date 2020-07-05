@@ -26,6 +26,7 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { ArticleComponent } from './article/article.component';
 import { DashboardInfoComponent } from './dashboard-info/dashboard-info.component';
 import {UserService} from './user.service';
+import { NgxUiLoaderModule, NgxUiLoaderRouterModule, NgxUiLoaderHttpModule } from 'ngx-ui-loader';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,11 @@ import {UserService} from './user.service';
     HttpClientModule,
     NgbModule,
     CKEditorModule,
-
+    NgxUiLoaderModule, // import NgxUiLoaderModule
+    NgxUiLoaderRouterModule, // import NgxUiLoaderRouterModule. By default, it will show foreground loader.
+    NgxUiLoaderHttpModule, // import NgxUiLoaderHttpModule. By default, it will show background loader.
+    // NgxUiLoaderRouterModule.forRoot({ showForeground: true }),
+    NgxUiLoaderHttpModule.forRoot({ showForeground: true }),
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

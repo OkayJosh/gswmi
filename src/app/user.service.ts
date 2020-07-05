@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { Signupclass } from './signupclass';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,9 @@ export class UserService {
  
   // error messages received from the login attempt
   public errors: any = [];
+
+  //url for signup
+  signupUrl = 'https://theblogapi.herokuapp.com/users/';
  
   constructor(private http: HttpClient) {
     this.httpOptions = {
@@ -30,15 +34,22 @@ export class UserService {
       
     };
   }
- 
+
+  // contains api to signup
+  signUpApi(user: Signupclass) {
+    return this.http.post<any>(this.signupUrl, user);
+  }
   // Uses http.post() to get an auth token from djangorestframework-jwt endpoint
   public login(user) {
     this.http.post('https://theblogapi.herokuapp.com/api-token-auth/', JSON.stringify(user), this.httpOptions).subscribe(
       data => {
         this.updateData(data['token']);
+        localStorage.setItem('apikey', data['token']);
+        console.log('data', data['token']);
       },
       err => {
         this.errors = err['error'];
+        console.log(err['error'], 'errorrr');
       }
     );
   }
@@ -59,6 +70,7 @@ export class UserService {
     this.token = null;
     this.token_expires = null;
     this.username = null;
+    localStorage.setItem('apikey', null);
   }
  
   private updateData(token) {

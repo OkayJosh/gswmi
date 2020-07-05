@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { Chart } from 'chart.js';
 
 @Component({
@@ -8,8 +8,9 @@ import { Chart } from 'chart.js';
 })
 export class NavbarComponent implements OnInit, OnDestroy {
   isCollapsed = true;
-
-  ngOnInit() {
+  ngOnInit() {}
+  // tslint:disable-next-line: use-lifecycle-interface
+  ngAfterViewInit() {
     const body = document.getElementsByTagName('body')[0];
     body.classList.add('landing-page');
 
