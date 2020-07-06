@@ -5,10 +5,15 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class PodcastService {
-  getpodcasturl = 'https://theblogapi.herokuapp.com/users/'
+  getpodcasturl = 'http://theblogapi.herokuapp.com/posts/';
   constructor(private http: HttpClient) { }
   allpost() {
     // const key = localStorage.getItem('apikey');
        return this.http.get<any>(this.getpodcasturl );
  }
+  getpost(id) {
+    // const key = localStorage.getItem('apikey');
+       return this.http.get<any>(this.getpodcasturl + id + '/' );
+ }
+
 }

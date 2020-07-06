@@ -27,6 +27,7 @@ import { ArticleComponent } from './article/article.component';
 import { DashboardInfoComponent } from './dashboard-info/dashboard-info.component';
 import {UserService} from './user.service';
 import { NgxUiLoaderModule, NgxUiLoaderRouterModule, NgxUiLoaderHttpModule } from 'ngx-ui-loader';
+import { PrayerdetailsComponent } from './prayerdetails/prayerdetails.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,7 @@ import { NgxUiLoaderModule, NgxUiLoaderRouterModule, NgxUiLoaderHttpModule } fro
     ArticlesComponent, 
     PodcastComponent, 
     FooterComponent, 
-    DashboardNavComponent, RequestModalComponent, ContactUsComponent, ArticleComponent, DashboardInfoComponent,
+    DashboardNavComponent, RequestModalComponent, ContactUsComponent, ArticleComponent, DashboardInfoComponent, PrayerdetailsComponent,
   ],
   imports: [
     BrowserModule,

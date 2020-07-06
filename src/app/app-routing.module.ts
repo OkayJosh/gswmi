@@ -9,6 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { ArticleComponent } from './article/article.component';
 import { RouterModule, Routes } from '@angular/router';
+import { PodcastComponent } from './podcast/podcast.component';
+import { PrayerdetailsComponent } from './prayerdetails/prayerdetails.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent },
@@ -18,9 +20,11 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'contact-us', component: ContactUsComponent},
   { path: 'prayer', component: RequestModalComponent },
+  { path: 'podcast', component: PodcastComponent },
   { path: 'signup', component: RegisterComponent },
   { path: 'blog', component: ArticlesComponent},
-  { path: 'blog-details', component: ArticleComponent},
+  { path: 'blog-details/:id', component: ArticleComponent},
+  { path: 'prayer-details/:id', component: PrayerdetailsComponent},
 ];
 
 @NgModule({
