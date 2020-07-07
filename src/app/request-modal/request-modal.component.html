@@ -17,31 +17,31 @@
         <div class="pt-5 mt-5 row" >
         <div class="pt-5 container">
 
-            <div class="col-lg-7 col-md-6" *ngFor = 'let i of prayerlist'>
-            <h1 class="text-white">
-                {{ i.prayer_point }}  <br />
+            <div class="col-lg-7 col-md-6 offset-md-2" >
+                <form (ngSubmit)="prayerSubmit()" *ngIf="posted==false">
+                    <div class="form-group"> 
+                      <label for="exampleInputEmail1">Name</label>
+                      <input id="postborder" [(ngModel)]='prayerModel.name' name="name" type="text" class="form-control" placeholder="Enter Name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Email address</label>
+                      <input id="postborder" [(ngModel)]='prayerModel.email' name="email" type="email" class="form-control" placeholder="Enter email" required>
+                      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+        
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Prayer Point</label>
+                      <!-- <input [(ngModel)]='prayerModel.prayer_point' name="prayer_point" type="text" class="form-control" placeholder="Enter Name" required> -->
+                      <!-- <input type="text" [(ngModel)]='prayerModel.prayer_point'  class="form-control" > -->
+                      <textarea required id="postborder" [(ngModel)]='prayerModel.prayer_point' name="prayer_point" class="form-control"></textarea>                   
+                    </div>        
 
-                <!-- <span class="text-white"> International </span> -->
-            </h1>
-            <p class="text-white mb-3">
-                    {{ i.name }}
-            </p>
-            
-            <p class="text-white mb-3">
-                    {{ i.email }}
-            </p>
-            <p class="text-white mb-3">
-                    {{ i.date }}
-            </p>
-
-            <div class="btn-wrapper mb-3">
-                <p class="category text-success d-inline mr-1">More </p>
-                <a
-                class="btn btn-success btn-link btn-sm"              
-                >
-                <i class="tim-icons icon-minimal-right"> </i>
-                </a>
-            </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+                  <div *ngIf="posted==true">
+                    <p>Successfully Posted</p>
+                  </div>
             </div>
 
 

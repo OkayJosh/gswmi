@@ -11,6 +11,7 @@ import { ArticleComponent } from './article/article.component';
 import { RouterModule, Routes } from '@angular/router';
 import { PodcastComponent } from './podcast/podcast.component';
 import { PrayerdetailsComponent } from './prayerdetails/prayerdetails.component';
+import { PrayerlistComponent } from './prayerlist/prayerlist.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent },
@@ -24,7 +25,9 @@ const routes: Routes = [
   { path: 'signup', component: RegisterComponent },
   { path: 'blog', component: ArticlesComponent},
   { path: 'blog-details/:id', component: ArticleComponent},
+  { path: 'prayer-list', component: PrayerlistComponent},
   { path: 'prayer-details/:id', component: PrayerdetailsComponent},
+  
 ];
 
 @NgModule({

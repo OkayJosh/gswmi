@@ -28,6 +28,8 @@ import { DashboardInfoComponent } from './dashboard-info/dashboard-info.componen
 import {UserService} from './user.service';
 import { NgxUiLoaderModule, NgxUiLoaderRouterModule, NgxUiLoaderHttpModule } from 'ngx-ui-loader';
 import { PrayerdetailsComponent } from './prayerdetails/prayerdetails.component';
+import { PrayerlistComponent } from './prayerlist/prayerlist.component';
+
 
 @NgModule({
   declarations: [
@@ -41,7 +43,7 @@ import { PrayerdetailsComponent } from './prayerdetails/prayerdetails.component'
     ArticlesComponent, 
     PodcastComponent, 
     FooterComponent, 
-    DashboardNavComponent, RequestModalComponent, ContactUsComponent, ArticleComponent, DashboardInfoComponent, PrayerdetailsComponent,
+    DashboardNavComponent, RequestModalComponent, ContactUsComponent, ArticleComponent, DashboardInfoComponent, PrayerdetailsComponent, PrayerlistComponent
   ],
   imports: [
     BrowserModule,

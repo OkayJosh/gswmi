@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Signupclass } from '../signupclass';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
-
+ 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',

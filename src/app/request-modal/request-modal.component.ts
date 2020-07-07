@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PrayerService } from '../prayer.service';
+import { Prayerclass } from '../classes/prayerclass';
 
 @Component({
   selector: 'app-request-modal',
@@ -8,18 +9,22 @@ import { PrayerService } from '../prayer.service';
 })
 export class RequestModalComponent implements OnInit {
   prayerlist = [];
+  prayerModel = new Prayerclass('', '', '');
+  posted = false;
   constructor(private api:PrayerService) { }
-
-  ngOnInit(): void {
-    this.api.allpost().subscribe(
+  prayerSubmit(){
+    console.log(this.prayerModel);
+    this.api.postPrayer(this.prayerModel).subscribe(
       data => {
-        this.prayerlist = data;
-        console.log(data);
-      },
+        this.posted = true;
+             },
       error => {
         console.log(error.error);
       }
     );
+  }
+  ngOnInit(): void {
+
   }
 
 }

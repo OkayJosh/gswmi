@@ -1,0 +1,27 @@
+
+    <div class="col-lg-7 col-md-6" *ngFor = 'let i of prayerlist' >
+      <h1 class="text-white">
+          {{ i.prayer_point }}  <br />
+
+          <!-- <span class="text-white"> International </span> -->
+      </h1>
+      <p class="text-white mb-3">
+              {{ i.name }}
+      </p>
+      
+      <p class="text-white mb-3">
+              {{ i.email }}
+      </p>
+      <p class="text-white mb-3">
+              {{ i.date }}
+      </p>
+
+      <div class="btn-wrapper mb-3">
+          <p class="category text-success d-inline mr-1">More </p>
+          <a
+          class="btn btn-success btn-link btn-sm"              
+          >
+          <i class="tim-icons icon-minimal-right"> </i>
+          </a>
+      </div>
+      </div>

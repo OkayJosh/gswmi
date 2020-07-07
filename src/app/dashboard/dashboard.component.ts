@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { Chart } from 'chart.js';
+import { PrayerService } from '../prayer.service';
 
 
 @Component({
@@ -9,9 +10,11 @@ import { Chart } from 'chart.js';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit, OnDestroy  {
-
+  home = true; // this is to show the dashboard div in the dashboard page
+  prayer = false; // default is false this is to show the prayer div in the dashboard page if true
+  prayerlist = [];
   public Editor = ClassicEditor;
-  constructor() { }
+  constructor(private api:PrayerService) { }
 
   ngOnInit() {
     const body = document.getElementsByTagName('body')[0];
