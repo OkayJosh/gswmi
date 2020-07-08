@@ -12,12 +12,20 @@ import { RouterModule, Routes } from '@angular/router';
 import { PodcastComponent } from './podcast/podcast.component';
 import { PrayerdetailsComponent } from './prayerdetails/prayerdetails.component';
 import { PrayerlistComponent } from './prayerlist/prayerlist.component';
+import { OurRadioComponent } from './our-radio/our-radio.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: '*', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'dashboard', component: DashboardComponent,
+      children: [
+        {path: '', redirectTo: 'create', pathMatch: 'prefix'},
+        {path: 'prayer-list', component: PrayerlistComponent},
+        {path: 'radio', component: OurRadioComponent},
+        {path: 'podcast', component: PodcastComponent},
+        {path: 'create', component: ArticleComponent},
+      ] },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '*', redirectTo: 'home', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'contact-us', component: ContactUsComponent},
   { path: 'prayer', component: RequestModalComponent },
