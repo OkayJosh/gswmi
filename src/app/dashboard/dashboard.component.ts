@@ -13,7 +13,6 @@ export class DashboardComponent implements OnInit, OnDestroy  {
   home = true; // this is to show the dashboard div in the dashboard page
   prayer = false; // default is false this is to show the prayer div in the dashboard page if true
   prayerlist = [];
-  public Editor = ClassicEditor;
   constructor(private api:PrayerService) { }
 
   ngOnInit() {
