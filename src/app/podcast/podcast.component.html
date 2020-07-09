@@ -1,20 +1,14 @@
-<div class="row" >
+<div class="row scroll" >
 <div class="container">
     <button *ngIf="nexturl!=''" (click)='getNext()' class="btn btn-primary">Next</button>
     <div class="col-lg-12 col-md-12" *ngFor = 'let i of podcastlist'>
-    <h1 class="text-white">
+    <h5 class="text-white">
         {{ i.title }}  <br />
-
-        <!-- <span class="text-white"> International </span> -->
-    </h1>
-    <p class="text-white mb-3">
-            {{ i.summary }}
-    </p>
-    <p>
-        <audio id="myAudio" controls> 
+    </h5>
+         <audio id="myAudio" controls> 
             <source src="{{ i.playback_url }}" type="audio/mpeg">               
         </audio>
-    </p>           
+            
     </div>
     
 
