@@ -1,1 +1,40 @@
-<p>podcast works!</p>
+<app-navbar></app-navbar>
+<div class="wrapper">
+    <div class="page-header">
+        <img class="path" src="assets/img/blob.png" />
+
+        <img class="path2" src="assets/img/path2.png" />
+
+        <img class="shapes triangle" src="assets/img/triunghiuri.png" />
+
+        <img class="shapes wave" src="assets/img/waves.png" />
+
+        <img class="shapes squares" src="assets/img/patrat.png" />
+
+        <img class="shapes circle" src="assets/img/cercuri.png" />
+
+        <div class="pt-5 mt-5 row" >
+        <div class="pt-5 container">
+            <button *ngIf="nexturl!=''" (click)='getNext()' class="btn btn-primary">Next</button>
+            <div class="col-lg-7 col-md-6" *ngFor = 'let i of podcastlist'>
+            <h1 class="text-white">
+                {{ i.title }}  <br />
+
+                <!-- <span class="text-white"> International </span> -->
+            </h1>
+            <p class="text-white mb-3">
+                    {{ i.summary }}
+            </p>
+            <p>
+                <audio id="myAudio" controls> 
+                    <source src="{{ i.playback_url }}" type="audio/mpeg">               
+                </audio>
+            </p>           
+            </div>
+            
+
+        </div>
+        </div>
+    </div>
+</div>
+  
