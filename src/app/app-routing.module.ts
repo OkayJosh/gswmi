@@ -13,6 +13,7 @@ import { PodcastComponent } from './podcast/podcast.component';
 import { PrayerdetailsComponent } from './prayerdetails/prayerdetails.component';
 import { PrayerlistComponent } from './prayerlist/prayerlist.component';
 import { OurRadioComponent } from './our-radio/our-radio.component';
+import { PodcastlistComponent } from './podcastlist/podcastlist.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent },
@@ -35,6 +36,7 @@ const routes: Routes = [
   { path: 'blog-details/:id', component: ArticleComponent},
   { path: 'prayer-list', component: PrayerlistComponent},
   { path: 'prayer-details/:id', component: PrayerdetailsComponent},
+  { path: 'podcastlist', component: PodcastlistComponent},
   
 ];
 
