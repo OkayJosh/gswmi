@@ -4,25 +4,29 @@
                 <div class="card-body">        
                 <div class="row" *ngFor = 'let i of prayerlist'>
                 <div class="col-lg-3 col-md-12 col-sm-12">
-                    <h1 class="text-white">
-                        {{ i.prayer_point }}         
-                    </h1>
+                        <div class="card-category">
+                                {{ i.prayer_point }} 
+                        </div>
+        
                 </div>
                 <div class="col-lg-3 col-md-12 col-sm-12">
-                        <p class="text-white mb-3">
+                        <div class="card-category">
                                 {{ i.name }}
-                        </p>
+                        </div>
+
                 </div>
 
                 <div class="col-lg-3 col-md-12 col-sm-12">
-                        <p class="text-white mb-3">
+                        <div class="card-category">
                                 {{ i.email }}
-                        </p>
+                        </div>
+
                 </div>
                 <div class="col-lg-3 col-md-12 col-sm-12">
-                <p class="text-white mb-3">
-                        {{ i.date }}
-                </p>
+                        <div class="card-category">
+                                {{ i.date }}
+                        </div>
+
                 </div>
 
                 <div>

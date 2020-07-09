@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PodcastService } from "../podcast.service";
 
 @Component({
   selector: 'app-podcast',
@@ -6,10 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./podcast.component.scss']
 })
 export class PodcastComponent implements OnInit {
+  podcastlist = []
+  constructor(private api:PodcastService) { }
 
-  constructor() { }
-
+  getPodcast(){
+    this.api.allpostcast().subscribe(
+      data => {
+        this.podcastlist = data
+        console.log(data);
+      },
+      error => {
+        console.log(error.error)
+      }
+    )
+  }
   ngOnInit(): void {
+    this.getPodcast();
   }
 
 }
