@@ -93,16 +93,12 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
-              "src/assets",
-              "../node_modules/ckeditor/", 
-              "assets/js/ckeditor/" 
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [
-              "../node_modules/ckeditor/ckeditor.js"
-            ]
+            "scripts": []
           }
         },
         "lint": {
