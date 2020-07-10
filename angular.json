@@ -31,9 +31,7 @@
               "src/styles.scss",
               "src/assets/scss/blk-design-system.scss"
             ],
-            "scripts": [
-              "../node_modules/ckeditor/ckeditor.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
