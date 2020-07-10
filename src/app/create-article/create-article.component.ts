@@ -17,15 +17,13 @@ export class CreateArticleComponent {
   private editorSubject: Subject<any> = new AsyncSubject();
   public postForm = new FormGroup({
     title: new FormControl("", Validators.required),
-    body: new FormControl("", Validators.required, maxLength(this.editorSubject, 10))
+    text: new FormControl("", Validators.required, maxLength(this.editorSubject, 100000))
   });
 
   @ViewChild('Article') Article: any;    
   res: any;
 
   constructor(private articleservice:ArticleService, private router: Router) { }
-  articledata=new Article();
-
 
   handleEditorInit(e) {
     this.editorSubject.next(e.editor);
@@ -33,12 +31,13 @@ export class CreateArticleComponent {
   }
 
   onSubmit(){    
-    debugger;    
-    debugger;    
-    this.articleservice.addUpdateArticle(this.articledata).subscribe((data : any) => {    
+    debugger;  
+    console.log(this.postForm.value);
+    this.articleservice.addUpdateArticle(JSON.stringify(this.postForm.value)).subscribe((data : any) => {    
+
       debugger;    
       alert("Data saved Successfully");    
-      this.router.navigate(['dashboard/create']);    
+      this.router.navigate(['/dashboard/create']);    
     })    
   } 
 

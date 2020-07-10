@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'; 
+import { HttpClient, HttpHeaders } from '@angular/common/http'; 
 // import { Article } from '../app/models/article';
 
 @Injectable({
@@ -8,12 +8,22 @@ import { HttpClient } from '@angular/common/http';
 export class ArticleService {
 
   url: any;
-  constructor(private http: HttpClient) { }
+  private httpOptions: any;
+  
+  constructor(private http: HttpClient) {
+    this.httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        // 'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
+      })
+      
+    };
+  }
 
   addUpdateArticle(pagecontent) {  
         debugger  
         this.url = 'http://theblogapi.herokuapp.com/posts/';  
-        return this.http.post(this.url, pagecontent);  
+        return this.http.post(this.url, pagecontent, this.httpOptions);  
     } 
   getArticle(id){
     debugger

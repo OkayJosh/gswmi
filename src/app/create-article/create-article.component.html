@@ -1,13 +1,12 @@
 <div class="row" >
     <div class=" container">
-
         <div class="col-lg-7 col-md-6 offset-md-2" >
             <form (ngSubmit)="onSubmit()" [formGroup]="postForm">
                 <div class="title">
                   <input
                     name="title"
                     formControlName="title"
-                    placeholder="Title"
+                    placeholder="Topic of your Article"
                     type="text"/>
               
                   <div *ngIf="postForm.controls.title.hasError('required')">
@@ -15,10 +14,10 @@
                   </div>
                 </div>
               
-                <div class="mat-form-field-wrapper">
+                <div class="form-group">
                   <editor
-                    apiKey="Get your free API key at tiny.cloud and paste it here"
-                    formControlName="body"
+                    apiKey="oxwm77wl16thrx1ue1auzeztauhj868656g2gjv239pbz4fy"
+                    formControlName="text"
                     (onInit)="handleEditorInit($event)"
                     [init]="{
                       icons: 'material',
@@ -29,18 +28,19 @@
                     }"
                   ></editor>
               
-                  <div class="mat-form-field-subscript-wrapper">
-                    <div *ngIf="postForm.controls.body.hasError('maxlength')">
+                  <div class="form-group">
+                    <div *ngIf="postForm.controls.text.hasError('maxlength')">
                       Your post exceeds exceeds the character limit
-                      {{ postForm.controls.body.getError('maxlength').actualLength }} /
-                      {{ postForm.controls.body.getError('maxlength').requiredLength }}
+                      {{ postForm.controls.text.getError('maxlength').actualLength }} /
+                      {{ postForm.controls.text.getError('maxlength').requiredLength }}
                     </div>
               
-                    <div *ngIf="postForm.controls.body.touched && postForm.controls.body.hasError('required')">
+                    <div *ngIf="postForm.controls.text.touched && postForm.controls.text.hasError('required')">
                       This form is required
                     </div>
                   </div>
                 </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
               </form>
         </div>
 
