@@ -1,0 +1,49 @@
+<div class="row" >
+    <div class=" container">
+
+        <div class="col-lg-7 col-md-6 offset-md-2" >
+            <form (ngSubmit)="onSubmit()" [formGroup]="postForm">
+                <div class="title">
+                  <input
+                    name="title"
+                    formControlName="title"
+                    placeholder="Title"
+                    type="text"/>
+              
+                  <div *ngIf="postForm.controls.title.hasError('required')">
+                    Title is required
+                  </div>
+                </div>
+              
+                <div class="mat-form-field-wrapper">
+                  <editor
+                    apiKey="Get your free API key at tiny.cloud and paste it here"
+                    formControlName="body"
+                    (onInit)="handleEditorInit($event)"
+                    [init]="{
+                      icons: 'material',
+                      skin: 'borderless',
+                      plugins: 'wordcount',
+                      menubar: false,
+                      min_height: 150
+                    }"
+                  ></editor>
+              
+                  <div class="mat-form-field-subscript-wrapper">
+                    <div *ngIf="postForm.controls.body.hasError('maxlength')">
+                      Your post exceeds exceeds the character limit
+                      {{ postForm.controls.body.getError('maxlength').actualLength }} /
+                      {{ postForm.controls.body.getError('maxlength').requiredLength }}
+                    </div>
+              
+                    <div *ngIf="postForm.controls.body.touched && postForm.controls.body.hasError('required')">
+                      This form is required
+                    </div>
+                  </div>
+                </div>
+              </form>
+        </div>
+
+
+    </div>
+    </div>

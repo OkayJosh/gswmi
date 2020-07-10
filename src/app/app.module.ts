@@ -1,12 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { RichTextEditorModule } from '@syncfusion/ej2-angular-richtexteditor';
 
 import { AppRoutingModule } from './app-routing.module';
-import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; 
 
 
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -22,7 +22,9 @@ import { FooterComponent } from './footer/footer.component';
 import { DashboardNavComponent } from './dashboard-nav/dashboard-nav.component';
 import { RequestModalComponent } from './request-modal/request-modal.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
-import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+
+import { EditorModule } from "@tinymce/tinymce-angular";
+ 
 import { ArticleComponent } from './article/article.component';
 import { DashboardInfoComponent } from './dashboard-info/dashboard-info.component';
 import {UserService} from './user.service';
@@ -30,6 +32,7 @@ import { NgxUiLoaderModule, NgxUiLoaderRouterModule, NgxUiLoaderHttpModule } fro
 import { PrayerdetailsComponent } from './prayerdetails/prayerdetails.component';
 import { PrayerlistComponent } from './prayerlist/prayerlist.component';
 import { PodcastlistComponent } from './podcastlist/podcastlist.component';
+import { CreateArticleComponent } from './create-article/create-article.component';
 
 
 @NgModule({
@@ -44,15 +47,16 @@ import { PodcastlistComponent } from './podcastlist/podcastlist.component';
     ArticlesComponent, 
     PodcastComponent, 
     FooterComponent, 
-    DashboardNavComponent, RequestModalComponent, ContactUsComponent, ArticleComponent, DashboardInfoComponent, PrayerdetailsComponent, PrayerlistComponent, PodcastlistComponent
+    DashboardNavComponent, RequestModalComponent, ContactUsComponent, ArticleComponent, DashboardInfoComponent, PrayerdetailsComponent, PrayerlistComponent, PodcastlistComponent, CreateArticleComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
-    CKEditorModule,
+    EditorModule,
     NgxUiLoaderModule, // import NgxUiLoaderModule
     NgxUiLoaderRouterModule, // import NgxUiLoaderRouterModule. By default, it will show foreground loader.
     NgxUiLoaderHttpModule, // import NgxUiLoaderHttpModule. By default, it will show background loader.

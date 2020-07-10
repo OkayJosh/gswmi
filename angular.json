@@ -31,7 +31,9 @@
               "src/styles.scss",
               "src/assets/scss/blk-design-system.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "../node_modules/ckeditor/ckeditor.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -91,12 +93,16 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "../node_modules/ckeditor/", 
+              "assets/js/ckeditor/" 
             ],
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "../node_modules/ckeditor/ckeditor.js"
+            ]
           }
         },
         "lint": {

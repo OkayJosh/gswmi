@@ -14,6 +14,8 @@ import { PrayerdetailsComponent } from './prayerdetails/prayerdetails.component'
 import { PrayerlistComponent } from './prayerlist/prayerlist.component';
 import { OurRadioComponent } from './our-radio/our-radio.component';
 import { PodcastlistComponent } from './podcastlist/podcastlist.component';
+import { CreateArticleComponent } from './create-article/create-article.component';
+
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent },
@@ -23,7 +25,7 @@ const routes: Routes = [
         {path: 'prayer-list', component: PrayerlistComponent},
         {path: 'radio', component: OurRadioComponent},
         {path: 'podcast', component: PodcastComponent},
-        {path: 'create', component: ArticleComponent},
+        {path: 'create', component: CreateArticleComponent},
       ] },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '*', redirectTo: 'home', pathMatch: 'full' },
@@ -33,7 +35,7 @@ const routes: Routes = [
   { path: 'podcast', component: PodcastComponent },
   { path: 'signup', component: RegisterComponent },
   { path: 'blog', component: ArticlesComponent},
-  { path: 'blog-details/:id', component: ArticleComponent},
+  { path: 'blog-details', component: ArticleComponent},
   { path: 'prayer-list', component: PrayerlistComponent},
   { path: 'prayer-details/:id', component: PrayerdetailsComponent},
   { path: 'podcastlist', component: PodcastlistComponent},
