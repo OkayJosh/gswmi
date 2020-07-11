@@ -13,29 +13,27 @@
 
         <img class="shapes circle" src="assets/img/cercuri.png" />
 
-        <div class="pt-5 mt-5 row" >
-        <div class="pt-5 container">
-
-            <table class="table">    
-              <thead>    
-                <tr>    
-                  <th scope="col">#</th>    
-                  <th scope="col">Title</th>    
-                  <th scope="col">Content</th>    
-                   <th scope="col">Details</th>    
-                </tr>    
-              </thead>    
-              <tbody>    
-                <tr *ngFor="let data of res">    
-                  <th scope="row">{{data.id}}</th>    
-                  <td>{{data.title}}</td>    
-                  <td>{{data.Content}}</td>    
-                  <td>  <button (click)="getContentById(data.id)" type="submit" class="btn btn-info">Details</button></td>     
-                </tr>    
-              </tbody>    
-            </table>  
-        </div>
+        <div class="row scroll" >
+            <section class="section section-lg section-safe">
+                <img class="path" src="assets/img/path5.png" />
+            
+                <div class="container">
+                  <div class="row row-grid justify-content-between">
+                    <div class="col-lg-3 col-md-12 col-sm-12" *ngFor="let data of res">
+                      
+                        <div class="card" style="width: 20rem;">
+                        <img class="img-fluid floating" src="assets/img/chester-wade.jpg" />
+                        <div class="card-body">
+                            <h4 class="card-title">{{data.title}}s</h4>
+                            <p class="card-text">{{data.summary}}</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <button (click)="getContentById(data.id)" type="submit" class="btn btn-info">Read more</button>
+                        </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
         </div>
     </div>
 </div>
-  
