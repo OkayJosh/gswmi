@@ -132,6 +132,11 @@ export class HomeComponent implements OnInit {
       }
     });
   }
+
+  onwhatsappclick(){
+    alert("join our whatsapp group");
+    window.location.href="https://chat.whatsapp.com/BHMRZCAoI6NFlbWuFpdJAy"
+  }
   ngOnDestroy() {
     const body = document.getElementsByTagName('body')[0];
     body.classList.remove('landing-page');

@@ -32,6 +32,10 @@ import { PrayerdetailsComponent } from './prayerdetails/prayerdetails.component'
 import { PrayerlistComponent } from './prayerlist/prayerlist.component';
 import { PodcastlistComponent } from './podcastlist/podcastlist.component';
 import { CreateArticleComponent } from './create-article/create-article.component';
+import { Min1Component } from './min1/min1.component';
+import { Min2Component } from './min2/min2.component';
+import { Min3Component } from './min3/min3.component';
+import { Min4Component } from './min4/min4.component';
 
 
 @NgModule({
@@ -46,7 +50,7 @@ import { CreateArticleComponent } from './create-article/create-article.componen
     ArticlesComponent, 
     PodcastComponent, 
     FooterComponent, 
-    DashboardNavComponent, RequestModalComponent, ContactUsComponent, ArticleComponent, DashboardInfoComponent, PrayerdetailsComponent, PrayerlistComponent, PodcastlistComponent, CreateArticleComponent
+    DashboardNavComponent, RequestModalComponent, ContactUsComponent, ArticleComponent, DashboardInfoComponent, PrayerdetailsComponent, PrayerlistComponent, PodcastlistComponent, CreateArticleComponent, Min1Component, Min2Component, Min3Component, Min4Component
   ],
   imports: [
     BrowserModule,

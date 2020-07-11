@@ -112,6 +112,10 @@ export class NavbarComponent implements OnInit, OnDestroy {
       }
     });
   }
+  onwhatsappclick(){
+    alert("join our whatsapp group");
+    window.location.href="https://chat.whatsapp.com/BHMRZCAoI6NFlbWuFpdJAy"
+  }
   ngOnDestroy() {
     const body = document.getElementsByTagName('body')[0];
     body.classList.remove('landing-page');
