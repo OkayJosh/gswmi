@@ -13,20 +13,19 @@
 
         <img class="shapes circle" src="assets/img/cercuri.png" />
 
-        <div class="row scroll" >
-            <section class="section section-lg section-safe">
+        <div class="row scroll pt-5 ">
+            <section class="section section-lg section-safe pl-5 ml-5">
                 <img class="path" src="assets/img/path5.png" />
             
                 <div class="container">
                   <div class="row row-grid justify-content-between">
-                    <div class="col-lg-3 col-md-12 col-sm-12" *ngFor="let data of res">
+                    <div class="col-lg-4 col-md-12 col-sm-12" *ngFor="let data of res" >
                       
                         <div class="card" style="width: 20rem;">
-                        <img class="img-fluid floating" src="assets/img/chester-wade.jpg" />
                         <div class="card-body">
-                            <h4 class="card-title">{{data.title}}s</h4>
-                            <p class="card-text">{{data.summary}}</p>
-                            <button (click)="getContentById(data.id)" type="submit" class="btn btn-info">Read more</button>
+                            <h4 class="card-title">{{data.title}}</h4>
+                            <p class="card-text" [innerHTML]="data.summary"></p>
+                            <button (click)="getContentById(data.id)" type="submit" class="btn btn-primary">Read more</button>
                         </div>
                         </div>
                     </div>
