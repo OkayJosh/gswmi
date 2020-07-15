@@ -41,16 +41,17 @@ export class UserService {
   }
   // Uses http.post() to get an auth token from djangorestframework-jwt endpoint
   public login(user) {
-    this.http.post('https://theblogapi.herokuapp.com/api-token-auth/', JSON.stringify(user), this.httpOptions).subscribe(
+    return this.http.post('https://theblogapi.herokuapp.com/api-token-auth/', JSON.stringify(user.getRawValue()), this.httpOptions).subscribe(
       data => {
         this.updateData(data['token']);
         localStorage.setItem('apikey', data['token']);
-        console.log('data', data['token']);
+        
       },
       err => {
         this.errors = err['error'];
         console.log(err['error'], 'errorrr');
       }
+      
     );
   }
  

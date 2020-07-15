@@ -1,35 +1,34 @@
 <app-navbar></app-navbar>
 <body>
-<div class="pt-5 mt-5 row" *ngIf="!_userService.token">
+<div class="pt-5 mt-5 row">
   <div class="pt-5 container">
       <div class="col-md-6 offset-md-3">
-          <form>
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
               <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" class="form-control" name="login-username" [(ngModel)]="user.username" id="userUsername"  placeholder="Enter Username">
-                <span *ngFor="let error of _userService.errors.username"><br />{{ error }}</span>
+                <input type="text" class="form-control" formControlName="username" name="login-username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" id="userUsername"  placeholder="Enter Username">
+                <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                  <div *ngIf="f.username.errors.required">Username is required</div>
+              </div>
               </div>
               <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" class="form-control" name="login-password"[(ngModel)]="user.password" id="userPassword" placeholder="Password">
-                <span *ngFor="let error of _userService.errors.password"><br />{{ error }}</span>
+                <input type="password" class="form-control" formControlName="password" name="login-password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" id="userPassword" placeholder="Password">
+                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                  <div *ngIf="f.password.errors.required">Password is required</div>
               </div>
-              <button type="submit" class="btn btn-primary" (click)="login()">Submit</button>
-              <div class="col-sm-12">
-                <span *ngFor="let error of _userService.errors.non_field_errors">{{ error }}<br /></span>
+              </div>
+              
+              <div class="form-group">
+                <button [disabled]="loading" class="btn btn-primary">
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    Login
+                </button>
+                <a routerLink="/register" class="btn btn-link">Register</a>
               </div>
             </form>
+            
       </div>
-  </div>
-</div>
-<div class="pt-5 mt-5 row" *ngIf="_userService.token">
-  <div class="pt-5 container">
-    <div class="col-md-6 offset-md-3">
-      You are logged in as {{ _userService.username }}.<br />
-      Token Expires: {{ _userService.token_expires }}<br />
-      <button (click)="refreshToken()" type="submit" class="btn btn-primary">Refresh Token</button>
-      <button (click)="logout()" type="submit" class="btn btn-primary">Log Out</button>
-    </div>
   </div>
 </div>
 </body>
