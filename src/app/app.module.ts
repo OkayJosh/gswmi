@@ -59,6 +59,8 @@ import { Min4Component } from './min4/min4.component';
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
+    // // add social buttons module to NgModule imports
+    // JwSocialButtonsModule,
     EditorModule,
     NgxUiLoaderModule, // import NgxUiLoaderModule
     NgxUiLoaderRouterModule, // import NgxUiLoaderRouterModule. By default, it will show foreground loader.

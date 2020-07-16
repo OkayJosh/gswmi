@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { _throw  as ObservableThrow } from 'rxjs/observable/throw';
 import { of as ObservableOf } from 'rxjs/observable/of';
-import { Article } from '../app/models/article';
+import { Post } from '../app/models/posts';
 
 
 @Injectable({
@@ -28,10 +28,13 @@ export class ArticleService {
   addUpdateArticle(pagecontent): Observable<any> {    
         return this.http.post(this.url, pagecontent, this.httpOptions);  
     } 
-  getArticle(id): Observable<Article[]>{
-    return this.http.get<Article[]>(this.url + id + '/');
+  getArticle(id): Observable<Post[]>{
+    return this.http.get<Post[]>(this.url + id + '/');
   }
-  getArticles(): Observable<Article[]>{
-    return this.http.get<Article[]>(this.url);
+  getArticles(): Observable<Post[]>{
+    return this.http.get<Post[]>(this.url);
   }
+  getNextArticle(url){
+    return this.http.get<Post[]>(url);
+}
 }

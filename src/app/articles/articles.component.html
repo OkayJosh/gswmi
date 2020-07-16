@@ -16,11 +16,16 @@
                 <section class="section section-lg section-safe">
                     <img class="path" src="assets/img/path5.png" />
                 
-                    <div class="container scroll">
+                    <div class="container">
+                        <button *ngIf="nextUrl!=''" (click)='getNext()' class="btn btn-primary">Next</button>
                       <div class="row row-grid justify-content-between">
-                        <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let post of article | async " >
-                          
-                            <div class="card" style="width: 100%; height: 10em;">
+                        <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let post of article" >
+                            <div class="card" style="width: 20rem;">
+                                <figure>
+                                    <img class="fit-picture" src="assets/img/fabien-bazanegue.jpg"
+                                            alt="{{post.title}}">
+                                    <figcaption>{{post.title}}</figcaption>
+                                </figure> 
                             <div class="card-body">
                                 <h4 class="card-title">{{post.title}}</h4>
                                 <p class="card-text" [innerHTML]="post.summary"></p>

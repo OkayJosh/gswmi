@@ -1,4 +1,22 @@
 div {
     margin-top: 100px;
     margin-bottom: 20px;
+    
+}
+.container{
+    height: 100%;
+    overflow-y: visible;
+}
+
+.page-header{
+    overflow-y: visible;
+}
+
+h1 {
+    font-size: large;
+    font-weight: bolder;
+}
+
+span {
+    font-size: large;  
 }
