@@ -27,6 +27,7 @@
     "@angular/router": "~9.1.9",
     "@ng-bootstrap/ng-bootstrap": "^6.1.0",
     "@tinymce/tinymce-angular": "^4.0.0",
+    "@types/compression": "^1.7.0",
     "angular-in-memory-web-api": "^0.11.0",
     "bootstrap": "^4.5.0",
     "chart.js": "^2.9.3",
