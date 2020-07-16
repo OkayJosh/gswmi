@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'; 
 // import { Article } from '../app/models/article';
 import { Observable } from 'rxjs/Observable';
-import { _throw  as ObservableThrow } from 'rxjs/observable/throw';
-import { of as ObservableOf } from 'rxjs/observable/of';
 import { Post } from '../app/models/posts';
 
 

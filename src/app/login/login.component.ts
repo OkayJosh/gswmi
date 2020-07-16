@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
-import { HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { User, UserResult } from '../models/user';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,23 +12,44 @@ import { HttpHeaders } from '@angular/common/http';
 })
 export class LoginComponent implements OnInit {
 
-  public user: any;
+  public user: Observable<UserResult[]>;
+  prevoiusUrl: any;
+  nextUrl: any;
+  token: any;
+  public loginForm: FormGroup = new FormGroup({
+    password: new FormControl(null, [Validators.required, Validators.minLength(4)]),
+    username: new FormControl(null, [Validators.required, Validators.minLength(3)])
+  });
+  error: any;
 
-  constructor ( public _userService: UserService ){}
+  constructor ( public _userService: UserService, private router: Router ){}
 
   ngOnInit(){
-    this.user = {
-      username: '',
-      password: '',
-    }
+
   }
 
   login(){
-    this._userService.login({'username': this.user.username, 'password': this.user.password})
+    this._userService.login(this.loginForm.value).subscribe(
+      data =>{
+        this.token = data;
+        localStorage.setItem('token', data)
+        this.router.navigate(['/dashboard']);
+      },
+      error =>{
+        this.error = error;
+        console.log(error);
+      }
+    )
+
   }
 
   refreshToken(){
-    this._userService.refreshToken();
+    this._userService.refreshToken(this.token).subscribe(
+      data => {
+        this.token = data;
+        localStorage.setItem('token', data);
+      }
+    );
   }
 
   logout(){

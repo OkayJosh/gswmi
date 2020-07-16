@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { ContentChild } from '@angular/core';
 import { NgbPagination } from '@ng-bootstrap/ng-bootstrap'
-import { error } from 'protractor';
+
 
 
 @Component({

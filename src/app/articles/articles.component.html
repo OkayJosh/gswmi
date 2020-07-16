@@ -1,23 +1,6 @@
-    <div class="wrapper">
-        <div class="page-header">
-            <img class="path" src="assets/img/blob.png" />
-    
-            <img class="path2" src="assets/img/path2.png" />
-    
-            <img class="shapes triangle" src="assets/img/triunghiuri.png" />
-    
-            <img class="shapes wave" src="assets/img/waves.png" />
-    
-            <img class="shapes squares" src="assets/img/patrat.png" />
-    
-            <img class="shapes circle" src="assets/img/cercuri.png" />
-    
-            <div class="row  mt-5 pt-5 pl-lg-5">
-                <section class="section section-lg section-safe">
-                
-                    <div class="container">
-                        <button *ngIf="nextUrl!=''" (click)='getNext()' class="btn btn-primary">Next</button>
-                      <div class="row row-grid justify-content-between">
+                    <div class="container  mt-5 pt-5">
+                        
+                      <div class="row pt-5 row-grid justify-content-between">
                         <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let post of article" >
                             <div class="card" style="width: 20rem;">
                                 <figure>
@@ -33,9 +16,8 @@
                             </div>
                         </div>
                       </div>
+                      <button *ngIf="nextUrl!=''" (click)='getNext()' class="btn btn-primary">Next</button>
                     </div>
-                  </section>
-            </div>
-        </div>
-    </div>
+
+
 

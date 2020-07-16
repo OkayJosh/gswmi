@@ -11,7 +11,9 @@
                     placeholder="Topic of your Article"
                     type="text"/>
               
-                  <span *ngIf="postForm.controls.title.hasError('required')">
+                  <span *ngIf="postForm.get('title').invalid||(
+                    postForm.get('title').dirty||
+                    postForm.get('title').touched)">
                     Title is required
                   </span>
                   </div>
@@ -41,6 +43,9 @@
               
                     <div *ngIf="postForm.controls.text.touched && postForm.controls.text.hasError('required')">
                       This form is required
+                    </div>
+                    <div *ngIf="error">
+                      {{error}}
                     </div>
                   </div>
                 </div>

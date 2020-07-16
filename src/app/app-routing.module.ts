@@ -33,7 +33,6 @@ const routes: Routes = [
   { path: 'contact-us', component: ContactUsComponent},
   { path: 'prayer', component: RequestModalComponent },
   { path: 'podcast', component: PodcastComponent },
-  { path: 'signup', component: RegisterComponent },
   { path: 'blog', component: ArticlesComponent},
   { path: 'blog-details', component: ArticleComponent},
   { path: 'prayer-list', component: PrayerlistComponent},

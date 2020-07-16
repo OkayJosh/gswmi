@@ -3,29 +3,52 @@
 
 <div class="container">
     <div class="col-md-6 offset-md-3">
-        <div *ngIf="error == true">
-        <p *ngFor='let i of errormessage'> {{ i }}</p>
+        <div *ngIf="error">
+        <p> {{ error.statusText }}</p>
       </div>
-        <form (ngSubmit)="SignUp()">
+        <form class = "from" (ngSubmit)="SignUp()" [formGroup]="signupForm">
             <div class="form-group">
               <label for="exampleInputEmail1">Username</label>
-              <input [(ngModel)]='signupModel.username' name="username" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Username">
+              <input formControlName="username" name="username" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Username">
+              <span *ngIf="signupForm.get('username').invalid||(
+                signupForm.get('username').dirty||
+                signupForm.get('username').touched)">
+                username is required
+              </span>
             </div>
             
             <div class="form-group">
               <label for="exampleInputEmail1">Email address</label>
-              <input [(ngModel)]='signupModel.email' name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+              <input formControlName="email" name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
               <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              <span *ngIf="signupForm.get('email').invalid &&(
+                signupForm.get('email').dirty||
+                signupForm.get('email').touched)">
+                email is required
+              </span>
             </div>
 
             <div class="form-group">
               <label for="exampleInputPassword1">Password</label>
-              <input [(ngModel)]='signupModel.password' name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              <input fromControlName="password" name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              <span *ngIf="signupForm.get('password').invalid && (
+                signupForm.get('password').dirty||
+                signupForm.get('password').touched)">
+                password is required
+              </span>
             </div>
 
             <div class="form-group">
                 <label for="exampleInputPassword1">Confirm Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <input type="password" formControlName="confirmPass" class="form-control" id="exampleInputPassword1" placeholder="Confirm Password">
+                <span *ngIf="signupForm.get('password') == signupForm.get('confirmPass')">
+                  password must be the same
+                </span>
+                <span *ngIf="signupForm.get('confirmPass').invalid && (
+                  signupForm.get('confirmPass').dirty||
+                  signupForm.get('confirmPass').touched)">
+                  confirm your password
+                </span>
               </div>
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>

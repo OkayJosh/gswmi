@@ -22,6 +22,7 @@ export class CreateArticleComponent {
 
   @ViewChild('Article') Article: any;    
   res: any;
+  error: any;
 
   constructor(private articleservice:ArticleService, private router: Router) { }
 
@@ -31,14 +32,16 @@ export class CreateArticleComponent {
   }
 
   onSubmit(){    
-    debugger;  
-    console.log(this.postForm.value);
-    this.articleservice.addUpdateArticle(JSON.stringify(this.postForm.value)).subscribe((data : any) => {    
-
-      debugger;    
-      alert("Data saved Successfully");    
-      this.router.navigate(['/dashboard/create']);    
-    })    
+    this.articleservice.addUpdateArticle(JSON.stringify(this.postForm.value)).subscribe((data : any) => {       
+      error => {
+        this.error = error;
+      }
+      alert("Data saved Successfully"); 
+    })
+    this.postForm = new FormGroup({
+      title: new FormControl("", Validators.required),
+      text: new FormControl("", Validators.required, maxLength(this.editorSubject, 100000))
+    });  
   } 
 
 }
