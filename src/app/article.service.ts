@@ -1,13 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'; 
 // import { Article } from '../app/models/article';
+import { Observable } from 'rxjs/Observable';
+import { _throw  as ObservableThrow } from 'rxjs/observable/throw';
+import { of as ObservableOf } from 'rxjs/observable/of';
+import { Article } from '../app/models/article';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ArticleService {
 
-  url: any;
+  url = 'http://theblogapi.herokuapp.com/posts/';
   private httpOptions: any;
   
   constructor(private http: HttpClient) {
@@ -20,19 +25,13 @@ export class ArticleService {
     };
   }
 
-  addUpdateArticle(pagecontent) {  
-        debugger  
-        this.url = 'http://theblogapi.herokuapp.com/posts/';  
+  addUpdateArticle(pagecontent): Observable<any> {    
         return this.http.post(this.url, pagecontent, this.httpOptions);  
     } 
-  getArticle(id){
-    debugger
-    this.url = 'http://theblogapi.herokuapp.com/posts/' + id + '/';
-    return this.http.get(this.url);
+  getArticle(id): Observable<Article[]>{
+    return this.http.get<Article[]>(this.url + id + '/');
   }
-  getArticles(){
-    debugger
-    this.url = 'http://theblogapi.herokuapp.com/posts/';
-    return this.http.get(this.url);
+  getArticles(): Observable<Article[]>{
+    return this.http.get<Article[]>(this.url);
   }
 }

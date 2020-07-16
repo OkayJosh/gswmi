@@ -1,7 +1,6 @@
 .scroll { 
     width: 100%; 
-    height: 500px; 
+    height: 100%; 
     overflow-x: hidden; 
-    overflow-y: scroll; 
-    text-align:justify; 
+    overflow-y: visible, scroll;  
 } 

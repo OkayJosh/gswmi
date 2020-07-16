@@ -52,6 +52,7 @@ export class UserService {
         console.log(err['error'], 'errorrr');
       }
     );
+    return true;
   }
  
   // Refreshes the JWT token, to extend the time the user is logged in

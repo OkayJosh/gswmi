@@ -1,7 +1,11 @@
 const cors = require('cors'); 
+const compression = require('compression')
 const express = require('express');
 const path = require('path');
 const app = express();
+
+// fix to use compression
+app.use(compression());
 
 // fix to allow cross origin resource sharing
 app.use(cors());

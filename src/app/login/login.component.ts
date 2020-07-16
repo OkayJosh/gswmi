@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    this._userService.login({'username': this.user.username, 'password': this.user.password});
+    this._userService.login({'username': this.user.username, 'password': this.user.password})
   }
 
   refreshToken(){

@@ -1,37 +1,37 @@
-<app-navbar></app-navbar>
-<div class="wrapper">
-    <div class="page-header">
-        <img class="path" src="assets/img/blob.png" />
-
-        <img class="path2" src="assets/img/path2.png" />
-
-        <img class="shapes triangle" src="assets/img/triunghiuri.png" />
-
-        <img class="shapes wave" src="assets/img/waves.png" />
-
-        <img class="shapes squares" src="assets/img/patrat.png" />
-
-        <img class="shapes circle" src="assets/img/cercuri.png" />
-
-        <div class="row  pt-5 pl-lg-5">
-            <section class="section section-lg section-safe">
-                <img class="path" src="assets/img/path5.png" />
-            
-                <div class="container scroll">
-                  <div class="row row-grid justify-content-between">
-                    <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let data of res" >
-                      
-                        <div class="card" style="width: 20rem;">
-                        <div class="card-body">
-                            <h4 class="card-title">{{data.title}}</h4>
-                            <p class="card-text" [innerHTML]="data.summary"></p>
-                            <button (click)="getContentById(data.id)" type="submit" class="btn btn-primary">Read more</button>
+    <div class="wrapper">
+        <div class="page-header">
+            <img class="path" src="assets/img/blob.png" />
+    
+            <img class="path2" src="assets/img/path2.png" />
+    
+            <img class="shapes triangle" src="assets/img/triunghiuri.png" />
+    
+            <img class="shapes wave" src="assets/img/waves.png" />
+    
+            <img class="shapes squares" src="assets/img/patrat.png" />
+    
+            <img class="shapes circle" src="assets/img/cercuri.png" />
+    
+            <div class="row  pt-5 pl-lg-5">
+                <section class="section section-lg section-safe">
+                    <img class="path" src="assets/img/path5.png" />
+                
+                    <div class="container scroll">
+                      <div class="row row-grid justify-content-between">
+                        <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let post of article | async " >
+                          
+                            <div class="card" style="width: 100%; height: 10em;">
+                            <div class="card-body">
+                                <h4 class="card-title">{{post.title}}</h4>
+                                <p class="card-text" [innerHTML]="post.summary"></p>
+                                <button (click)="getContentById(post.id)" type="submit" class="btn btn-primary">Read more</button>
+                            </div>
+                            </div>
                         </div>
-                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-              </section>
+                  </section>
+            </div>
         </div>
     </div>
-</div>
+

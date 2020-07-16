@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ArticleService } from '../article.service' 
+import { ArticleService } from '../article.service'
+import { Article } from '../models/article' 
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
 
 
 @Component({
@@ -9,26 +11,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./articles.component.scss']
 })
 export class ArticlesComponent implements OnInit{
-  res: any;
-  term: any;
-  const: any;
 
+  public article: Observable<Article[]>;
   constructor(private articleService: ArticleService, private router: Router){
 
   }
 
   ngOnInit(){
-    this.getContent();
+    this.article = this.articleService.getArticles();
   }
 
-  getContent(){
-    this.articleService.getArticles().subscribe((data:any)=>{
-      this.res=data;
-      this.term = this.res[1].pageContentTitle;
-      this.const = this.res[1].Content;
-      console.log(this.res);
-    })
-  }
   getContentById(id:number){
     this.router.navigate(['blog-details'], {queryParams: {id: id}});
   }
