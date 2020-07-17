@@ -1,25 +1,30 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Prayerclass } from './classes/prayerclass';
-
+import { Prayer } from "./models/prayers"
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PrayerService {
 
-  prayerurl = 'http://theblogapi.herokuapp.com/prayer_request/';
-  prayerModel = new Prayerclass('', '', '');
+  url = 'http://theblogapi.herokuapp.com/prayer_request/';
+
   constructor(private http: HttpClient) { }
-  allpost() {
+
+  allpost(): Observable<Prayer[]> {
     // const key = localStorage.getItem('apikey');
-       return this.http.get<any>(this.prayerurl );
- }
-  getpost(id) {
+        return this.http.get<Prayer[]>(this.url);
+    }
+  getpost(id): Observable<Prayer[]>{
     // const key = localStorage.getItem('apikey');
-       return this.http.get<any>(this.prayerurl + id + '/' );
- }
-postPrayer(post:Prayerclass){
-  return this.http.post<any>(this.prayerurl, post);
-}
+        return this.http.get<Prayer[]>(this.url + id + '/' );
+  }
+  postPrayer(content): Observable<any>{
+    return this.http.post<any>(this.url, content);
+  }
+  getNextPrayer(urlnext): Observable<Prayer[]>{
+    return this.http.get<Prayer[]>(urlnext)
+  }
 }

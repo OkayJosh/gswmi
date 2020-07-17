@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Prayer } from '../models/prayers'
 import { PrayerService } from '../prayer.service';
+import { Observable } from 'rxjs/Observable'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-prayerlist',
@@ -7,22 +10,41 @@ import { PrayerService } from '../prayer.service';
   styleUrls: ['./prayerlist.component.scss']
 })
 export class PrayerlistComponent implements OnInit {
-  prayerlist = [];
-  constructor(private api:PrayerService) { }
-  getPrayer(){
-      this.api.allpost().subscribe(
-      data => {
-      this.prayerlist = data;
-      console.log(data);
-      },
-      error => {
-      console.log(error.error);
-      }
-      );
+  public prayers: Observable<Prayer[]>;
+  collectionSize = '';
+  previousUrl: any;
+  nextUrl: any;
+  constructor(private prayerService:PrayerService,
+    private router: Router) { 
+
   }
 
-  ngOnInit(): void {
-    this.getPrayer();
+  ngOnInit (){
+    this.prayerService.allpost().subscribe(
+      data =>{
+        this.prayers = data['results'];
+        this.collectionSize = data['count'];
+        this.nextUrl = data['next'];
+        this.previousUrl = data['previous'];
+      }
+    )
+  }
+  getPrayerById(id:number){
+    this.router.navigate(['prayer-details'], {queryParams: {id: id}});
+  }
+
+  getNext(){
+    this.prayerService.getNextPrayer(this.nextUrl).subscribe(
+      data =>{
+        this.prayers = data['results'];
+        this.collectionSize = data['count'];
+        this.nextUrl = data['next'];
+        this.previousUrl = data['previous'];
+      },
+      error => {
+        console.log(error.error)
+      }
+    )
   }
 
 }

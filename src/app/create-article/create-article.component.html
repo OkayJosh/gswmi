@@ -1,5 +1,5 @@
 <div class="row" >
-    <div class="auto-container">
+    <div class="container">
         <div class="form-column col-lg-12 col-md-6 offset-md-2" >
             <form class="form" (ngSubmit)="onSubmit()" [formGroup]="postForm">
                 <div class="clearfix">
@@ -22,13 +22,11 @@
                 <div class="">
                   <editor
                   rel="preload"
-                    apiKey="oxwm77wl16thrx1ue1auzeztauhj868656g2gjv239pbz4fy"
                     formControlName="text"
                     (onInit)="handleEditorInit($event)"
                     [init]="{
-                      icons: 'bootstrap',
-                      skin: 'borderless',
-                      plugins: 'wordcount',
+                      base_url: '/tinymce', 
+                      suffix: '.min',
                       menubar: true,
                       min_height: 150
                     }"

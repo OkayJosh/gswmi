@@ -23,7 +23,7 @@ import { DashboardNavComponent } from './dashboard-nav/dashboard-nav.component';
 import { RequestModalComponent } from './request-modal/request-modal.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 
-import { EditorModule } from "@tinymce/tinymce-angular";
+import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
  
 import { ArticleComponent } from './article/article.component';
 import { DashboardInfoComponent } from './dashboard-info/dashboard-info.component';
@@ -90,7 +90,7 @@ import { Min4Component } from './min4/min4.component';
     }),
     NgxUiLoaderHttpModule.forRoot({ showForeground: true }),
   ],
-  providers: [UserService],
+  providers: [UserService, { provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
