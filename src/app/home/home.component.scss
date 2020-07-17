@@ -3,8 +3,23 @@
     font-size: large;
 }
 
+
 #backgroungg {
     padding-top: 5em;
     background-attachment: fixed;
     background-image: url('../../assets/img/gswmi.jpeg');
 }
+
+@media(max-width: 500px) {
+    #backgroungg {
+        background-image: none;
+        background-attachment: none;
+        padding-top: none;
+    }
+  }
+
+  @media(min-width: 500px) {
+    #dispalynone {
+        filter: blur(12px);
+    }
+  }
