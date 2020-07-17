@@ -5,6 +5,7 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { AsyncSubject, Subject } from 'rxjs';
 import { maxLength } from './maxlength.validator';
 import { Router } from '@angular/router';
+import { AuthenticationService } from '../authentication.service';
 
 
 @Component({
@@ -23,8 +24,11 @@ export class CreateArticleComponent {
   @ViewChild('Article') Article: any;    
   res: any;
   error: any;
+  currentUser: any;
 
-  constructor(private articleservice:ArticleService, private router: Router) { }
+  constructor(private articleservice:ArticleService, private auth: AuthenticationService, private router: Router) {
+    this.currentUser = auth.currentUserValue();
+   }
 
   handleEditorInit(e) {
     this.editorSubject.next(e.editor);

@@ -15,11 +15,14 @@ import { PrayerlistComponent } from './prayerlist/prayerlist.component';
 import { OurRadioComponent } from './our-radio/our-radio.component';
 import { PodcastlistComponent } from './podcastlist/podcastlist.component';
 import { CreateArticleComponent } from './create-article/create-article.component';
+import { AuthGuard } from './auth/auth.guard';
 
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent },
   { path: 'dashboard', component: DashboardComponent,
+      canActivate: [AuthGuard],
+      canActivateChild: [AuthGuard],
       children: [
         {path: '', redirectTo: 'create', pathMatch: 'prefix'},
         {path: 'prayer-list', component: PrayerlistComponent},

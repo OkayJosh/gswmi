@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import {  JwtModule, JWT_OPTIONS } from '@auth0/angular-jwt'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,7 +27,7 @@ import { EditorModule } from "@tinymce/tinymce-angular";
  
 import { ArticleComponent } from './article/article.component';
 import { DashboardInfoComponent } from './dashboard-info/dashboard-info.component';
-import {UserService} from './user.service';
+import { UserService } from './user.service';
 import { NgxUiLoaderModule, NgxUiLoaderRouterModule, NgxUiLoaderHttpModule } from 'ngx-ui-loader';
 import { PrayerdetailsComponent } from './prayerdetails/prayerdetails.component';
 import { PrayerlistComponent } from './prayerlist/prayerlist.component';
@@ -50,7 +51,19 @@ import { Min4Component } from './min4/min4.component';
     ArticlesComponent, 
     PodcastComponent, 
     FooterComponent, 
-    DashboardNavComponent, RequestModalComponent, ContactUsComponent, ArticleComponent, DashboardInfoComponent, PrayerdetailsComponent, PrayerlistComponent, PodcastlistComponent, CreateArticleComponent, Min1Component, Min2Component, Min3Component, Min4Component
+    DashboardNavComponent, 
+    RequestModalComponent, 
+    ContactUsComponent, 
+    ArticleComponent, 
+    DashboardInfoComponent, 
+    PrayerdetailsComponent, 
+    PrayerlistComponent, 
+    PodcastlistComponent, 
+    CreateArticleComponent, 
+    Min1Component, 
+    Min2Component, 
+    Min3Component, 
+    Min4Component
   ],
   imports: [
     BrowserModule,
@@ -66,6 +79,15 @@ import { Min4Component } from './min4/min4.component';
     NgxUiLoaderRouterModule, // import NgxUiLoaderRouterModule. By default, it will show foreground loader.
     NgxUiLoaderHttpModule, // import NgxUiLoaderHttpModule. By default, it will show background loader.
     // NgxUiLoaderRouterModule.forRoot({ showForeground: true }),
+    JwtModule.forRoot({ 
+      config: {
+        tokenGetter: () =>{
+          return localStorage.getItem("apikey");
+        },
+        allowedDomains: ["http://localhost:4200","https://gswmi.org", "http://gswmi.org"  ],
+        disallowedRoutes: [],
+      }
+    }),
     NgxUiLoaderHttpModule.forRoot({ showForeground: true }),
   ],
   providers: [UserService],

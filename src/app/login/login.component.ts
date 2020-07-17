@@ -31,9 +31,9 @@ export class LoginComponent implements OnInit {
   login(){
     this._userService.login(this.loginForm.value).subscribe(
       data =>{
-        this.token = data;
-        localStorage.setItem('token', data)
-        this.router.navigate(['/dashboard']);
+        localStorage.setItem('apikey', data['token'] )
+        console.log(data['token']);
+        this.router.navigate(['/dashboard/create']);
       },
       error =>{
         this.error = error;
@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
     this._userService.refreshToken(this.token).subscribe(
       data => {
         this.token = data;
-        localStorage.setItem('token', data);
+        localStorage.setItem('apikey', data);
       }
     );
   }
@@ -55,4 +55,5 @@ export class LoginComponent implements OnInit {
   logout(){
     this._userService.logout();
   }
+
 }

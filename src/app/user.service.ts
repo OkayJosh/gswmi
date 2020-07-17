@@ -36,7 +36,7 @@ export class UserService {
   }
   // Uses http.post() to get an auth token from djangorestframework-jwt endpoint
   public login(user): Observable<any> {
-    return this.http.post(this.urlToken, user);
+    return this.http.post(this.urlToken, user, this.httpOptions);
   }
  
   // Refreshes the JWT token, to extend the time the user is logged in
@@ -45,21 +45,7 @@ export class UserService {
   }
  
   public logout() {
-    // this.token = null;
-    // this.token_expires = null;
-    // this.username = null;
-    localStorage.setItem('token', null);
+    localStorage.setItem('apikey', null);
   }
- 
-  // private updateData(token) {
-  //   this.token = token;
-  //   this.errors = [];
- 
-  //   // decode the token to read the username and expiration timestamp
-  //   const token_parts = this.token.split(/\./);
-  //   const token_decoded = JSON.parse(window.atob(token_parts[1]));
-  //   this.token_expires = new Date(token_decoded.exp * 1000);
-  //   this.username = token_decoded.username;
-  // }
  
 }
