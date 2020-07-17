@@ -16,6 +16,7 @@ import { OurRadioComponent } from './our-radio/our-radio.component';
 import { PodcastlistComponent } from './podcastlist/podcastlist.component';
 import { CreateArticleComponent } from './create-article/create-article.component';
 import { AuthGuard } from './auth/auth.guard';
+import { ViewContactsComponent } from './view-contacts/view-contacts.component';
 
 
 const routes: Routes = [
@@ -29,6 +30,7 @@ const routes: Routes = [
         {path: 'radio', component: OurRadioComponent},
         {path: 'podcast', component: PodcastComponent},
         {path: 'create', component: CreateArticleComponent},
+        {path: 'notification', component: ViewContactsComponent},
       ] },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '*', redirectTo: 'home', pathMatch: 'full' },

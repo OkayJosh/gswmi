@@ -37,6 +37,7 @@ import { Min1Component } from './min1/min1.component';
 import { Min2Component } from './min2/min2.component';
 import { Min3Component } from './min3/min3.component';
 import { Min4Component } from './min4/min4.component';
+import { ViewContactsComponent } from './view-contacts/view-contacts.component';
 
 
 @NgModule({
@@ -63,7 +64,7 @@ import { Min4Component } from './min4/min4.component';
     Min1Component, 
     Min2Component, 
     Min3Component, 
-    Min4Component
+    Min4Component, ViewContactsComponent
   ],
   imports: [
     BrowserModule,

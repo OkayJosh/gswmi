@@ -16,7 +16,8 @@
             </div>
         </div>
         </div>
-        <button *ngIf="nextUrl!=''" (click)='getNext()' class="btn">Next</button>
+        <button *ngIf="nextUrl" (click)='getNext()' class="btn">Next</button>
+        <button *ngIf="prevoiusUrl" (click)='getNext()' class="btn">Next</button>
     </div>
 
 

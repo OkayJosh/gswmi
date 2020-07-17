@@ -25,7 +25,7 @@ export class ContactUsComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.contactForm.reset();
+    
   }
 
   onSubmit(){ 
@@ -36,6 +36,8 @@ export class ContactUsComponent implements OnInit {
       }
       alert("Data saved Successfully"); 
     })
+
+    this.contactForm.reset();
     
   }
 }
