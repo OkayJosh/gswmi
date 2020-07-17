@@ -34,5 +34,5 @@ export class ArticleService {
   }
   getNextArticle(url){
     return this.http.get<Post[]>(url);
-}
+  }
 }

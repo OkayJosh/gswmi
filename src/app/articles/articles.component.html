@@ -11,12 +11,12 @@
             <div class="card-body">
                 <h4 class="card-title">{{post.title}}</h4>
                 <p class="card-text" [innerHTML]="post.summary"></p>
-                <button (click)="getContentById(post.id)" type="submit" class="btn btn-primary">Read more</button>
+                <button (click)="getContentById(post.id)" type="submit" class="btn">Read more</button>
             </div>
             </div>
         </div>
         </div>
-        <button *ngIf="nextUrl!=''" (click)='getNext()' class="btn btn-primary">Next</button>
+        <button *ngIf="nextUrl!=''" (click)='getNext()' class="btn">Next</button>
     </div>
 
 

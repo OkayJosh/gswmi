@@ -42,10 +42,7 @@ export class CreateArticleComponent {
       }
       alert("Data saved Successfully"); 
     })
-    this.postForm = new FormGroup({
-      title: new FormControl("", Validators.required),
-      text: new FormControl("", Validators.required, maxLength(this.editorSubject, 100000))
-    });  
+    this.postForm.reset();  
   } 
 
 }

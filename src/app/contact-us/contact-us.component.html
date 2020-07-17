@@ -17,25 +17,45 @@
                     <div class="text">We Answer during 24 hours in working days.</div>
                     <!--Contact Form-->
                     <div class="contact-form">
-                        <form method="post">
+                        <form class="form" (ngSubmit)="onSubmit()" [formGroup]="contactForm">
                             <div class="clearfix">
                                 <div class="form-group">
                                     <label for="forfullname">Full name</label>
-                                    <input type="text" class="form-control" id="fullname" aria-describedby="textbox" placeholder="Enter Fullname">
+                                    <input type="text" formControlName="fullname" class="form-control" id="fullname" aria-describedby="textbox" placeholder="Enter Fullname">
+                                    <span *ngIf="contactForm.get('fullname').invalid||(
+                                        contactForm.get('fullname').dirty||
+                                        contactForm.get('fullname').touched)">
+                                        Title is required
+                                      </span>
                                 </div>
                                 <div class="form-group">
                                     <label for="phonenumber">Phone Number</label>
-                                    <input type="number" class="form-control" id="phonenumber" aria-describedby="number" placeholder="Enter Phone number">
+                                    <input type="number" formControlName="phonenumber" class="form-control" id="phonenumber" aria-describedby="number" placeholder="Enter Phone number">
+                                    <span *ngIf="contactForm.get('phonenumber').invalid||(
+                                        contactForm.get('phonenumber').dirty||
+                                        contactForm.get('phonenumber').touched)">
+                                        Title is required
+                                      </span>
                                 </div>
                                 <div class="form-group">
                                     <label for="forContact">Contact Address</label>
-                                    <input type="text" class="form-control" id="contact" aria-describedby="textbox" placeholder="Enter Address">
+                                    <input type="text" formControlName="address" class="form-control" id="contact" aria-describedby="textbox" placeholder="Enter Address">
+                                    <span *ngIf="contactForm.get('address').invalid||(
+                                        contactForm.get('address').dirty||
+                                        contactForm.get('address').touched)">
+                                        Contact Address is required
+                                      </span>
                                 </div>
                                 <div class="form-group">
                                     <label for="textarea">Message</label>
-                                    <textarea type="text" class="form-control" id="message" aria-describedby="textbox" placeholder="Message Here"></textarea>
+                                    <textarea type="text" formControlName="message" class="form-control" id="message" aria-describedby="textbox" placeholder="Message Here"></textarea>
+                                    <span *ngIf="contactForm.get('message').invalid||(
+                                        contactForm.get('message').dirty||
+                                        contactForm.get('message').touched)">
+                                        Message is required
+                                      </span>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn">Submit</button>
                             </div>
                             
                         </form>
