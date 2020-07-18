@@ -33,6 +33,7 @@ const routes: Routes = [
         {path: 'create', component: CreateArticleComponent},
         {path: 'notification', component: ViewContactsComponent},
         { path: 'createPub', component: Min1Component}, //publications
+        {path: 'createadvert', component: Min2Component}
       ] },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '*', redirectTo: 'home', pathMatch: 'full' },
