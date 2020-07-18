@@ -16,6 +16,7 @@
                     </div>
                     <div class="text">We Answer during 24 hours in working days.</div>
                     <!--Contact Form-->
+                    <div *ngIf='error'> {{ error.error }}</div>
                     <div class="contact-form">
                         <form class="form" (ngSubmit)="onSubmit()" [formGroup]="contactForm">
                             <div class="clearfix">

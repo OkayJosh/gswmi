@@ -1,1 +1,54 @@
-<p>min1 works!</p>
+<div class="row">
+    <div class="container">
+                    <div class="form-column col-lg-8 col-md-12 col-sm-12 ">
+                        <div class="sec-title">
+                            <h2>Publication Form</h2>
+                        </div>
+                        <div *ngIf="error">{{ error.error}}</div>
+                        <div class="contact-form">
+                            <form class="form" (ngSubmit)="onSubmit()" [formGroup]="pubForm">
+                                <div class="clearfix">
+                                    <div class="form-group">
+                                        <label for="forfullname">name</label>
+                                        <input type="text" formControlName="name" class="form-control" id="name" aria-describedby="textbox" placeholder="Enter name">
+                                        <span *ngIf="pubForm.get('name').invalid||(
+                                            pubForm.get('name').dirty||
+                                            pubForm.get('name').touched)">
+                                            Name is required
+                                          </span>
+                                    </div>
+                                    <div class="clearfix">
+                                        <div class= "">
+                                          <input
+                                          #imageInput
+                                          name="photo"
+                                          class="form-group"
+                                          formControlName="photo"
+                                          accept="image/png, image/jpeg"
+                                          type="file"
+                                          (change)="processFile(imageInput)">
+                                    
+                                        <span *ngIf="pubForm.get('photo').invalid||(
+                                            pubForm.get('photo').dirty||
+                                            pubForm.get('photo').touched)">
+                                          image is required
+                                        </span>
+                                        </div>
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="price">Price</label>
+                                        <input type="number" formControlName="price" class="form-control">
+                                        <span *ngIf="pubForm.get('price').invalid||(
+                                            pubForm.get('price').dirty||
+                                            pubForm.get('price').touched)">
+                                            price is required
+                                          </span>
+                                    </div>
+                                    <button type="submit" class="btn">Submit</button>
+                                </div>
+                                
+                            </form>
+                        </div>
+                    </div>
+                </div>
+    </div>

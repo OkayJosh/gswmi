@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 const maxLength = (editorSubject: Subject<any>, characterLimit: number): AsyncValidatorFn => {
   return (control: AbstractControl): Observable<ValidationErrors | null> => {
     return editorSubject.pipe(map((editor) => {
-      const characterCount = editor.plugins.wordcount.body.getCharacterCount();
+      const characterCount = editor.plugins.wordcount.text.getCharacterCount();
       
       return characterCount <= characterLimit ? null : {
         maxlength: {

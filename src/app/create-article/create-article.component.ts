@@ -22,8 +22,8 @@ export class CreateArticleComponent {
   private editorSubject: Subject<any> = new AsyncSubject();
   public postForm = new FormGroup({
     title: new FormControl("", Validators.required),
-    featured_image: new FormControl("", Validators.required),
-    text: new FormControl("", Validators.required, maxLength(this.editorSubject, 100000))
+    featured_image: new FormControl(null),
+    text: new FormControl("", Validators.required)
   });
 
   @ViewChild('Article') Article: any;    
@@ -52,12 +52,15 @@ export class CreateArticleComponent {
   }
 
   onSubmit(){    
-    this.articleservice.addUpdateArticle(JSON.stringify(this.postForm.value)).subscribe((data : any) => {       
+    this.articleservice.addUpdateArticle(JSON.stringify(this.postForm.value)).subscribe(
+      data =>{
+
+      },
       error => {
-        this.error = error;
+        this.error = JSON.stringify(error.error)
+        console.log(error.eror)
       }
-      alert("Data saved Successfully"); 
-    })
+    )
     this.postForm.reset();  
   } 
 

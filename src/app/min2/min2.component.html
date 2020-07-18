@@ -1,1 +1,45 @@
-<p>min2 works!</p>
+<div class="row">
+    <div class="container">
+                    <div class="form-column col-lg-8 col-md-12 col-sm-12 ">
+                        <div class="sec-title">
+                            <h2>Publication Form</h2>
+                        </div>
+                        <div *ngIf="error">{{ error.error}}</div>
+                        <div class="contact-form">
+                            <form class="form" (ngSubmit)="onSubmit()" [formGroup]="adForm">
+                                <div class="clearfix">
+                                    <div class="form-group">
+                                        <label for="forfullname">Advert Name</label>
+                                        <input type="text" formControlName="advertname" class="form-control" id="name" aria-describedby="textbox" placeholder="Enter name">
+                                        <span *ngIf="adForm.get('advertname').invalid||(
+                                            adForm.get('advertname').dirty||
+                                            adForm.get('advertname').touched)">
+                                            Name is required
+                                          </span>
+                                    </div>
+                                    <div class="clearfix">
+                                        <div class= "">
+                                          <input
+                                          #imageInput
+                                          name="photo"
+                                          class="form-group"
+                                          formControlName="photo"
+                                          accept="image/png, image/jpeg"
+                                          type="file"
+                                          (change)="processFile(imageInput)">
+                                    
+                                        <span *ngIf="adForm.get('photo').invalid||(
+                                            adForm.get('photo').dirty||
+                                            adForm.get('photo').touched)">
+                                          image is required
+                                        </span>
+                                        </div>
+                                      </div>
+                                    <button type="submit" class="btn">Submit</button>
+                                </div>
+                                
+                            </form>
+                        </div>
+                    </div>
+                </div>
+    </div>

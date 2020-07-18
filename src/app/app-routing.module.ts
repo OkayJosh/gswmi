@@ -18,6 +18,7 @@ import { CreateArticleComponent } from './create-article/create-article.componen
 import { AuthGuard } from './auth/auth.guard';
 import { ViewContactsComponent } from './view-contacts/view-contacts.component';
 import { Min1Component} from './min1/min1.component'
+import { Min2Component } from './min2/min2.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent },
@@ -31,6 +32,7 @@ const routes: Routes = [
         {path: 'podcast', component: PodcastComponent},
         {path: 'create', component: CreateArticleComponent},
         {path: 'notification', component: ViewContactsComponent},
+        { path: 'createPub', component: Min1Component}, //publications
       ] },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '*', redirectTo: 'home', pathMatch: 'full' },
@@ -43,8 +45,7 @@ const routes: Routes = [
   { path: 'prayer-list', component: PrayerlistComponent},
   { path: 'prayer-details/:id', component: PrayerdetailsComponent},
   { path: 'podcastlist', component: PodcastlistComponent},
-  { path: 'publications', component: Min1Component}, //publications
-  { path: 'advert', component: Min1Component}, //publications
+  { path: 'advert', component: Min2Component}, //publications
 ];
 
 @NgModule({

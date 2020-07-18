@@ -28,16 +28,18 @@ export class ContactUsComponent implements OnInit {
     
   }
 
-  onSubmit(){ 
-    console.log(this.contactForm.value);   
-    this.contactservice.addContact(JSON.stringify(this.contactForm.value)).subscribe((data : any) => {       
-      error => {
-        this.error = error;
-      }
-      alert("Data saved Successfully"); 
-    })
+  onSubmit(){    
+    this.contactservice.addContact(JSON.stringify(this.contactForm.value)).subscribe(
+      data => {
+        data;
+        alert("Data save Correctly")
 
-    this.contactForm.reset();
+      },
+      error =>{
+        this.error = JSON.stringify(error.eror) 
+      });
+
+    this.contactForm.reset()
     
   }
 }
