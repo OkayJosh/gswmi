@@ -1,11 +1,11 @@
 
-        <div class="row ">
+        <div class="row">
             <section class="section section-lg section-safe">
                 <img class="path" src="assets/img/path5.png" />
                 <button *ngIf="nexturl!=''" (click)='getNext()' class="btn">Next</button>
                 <div class="container scroll ">
-                  <div class="row row-grid justify-content-between">
-                    <div class="col-lg-4 col-md-12 col-sm-12" *ngFor = 'let i of podcastlist' >
+                  <div class="row row-grid justify-content-center">
+                    <div class="col-lg-6 col-md-12 col-sm-12" *ngFor = 'let i of podcastlist' >
                       
                         <div class="card" style="width: 20rem;">
                             <img class="fit-picture"

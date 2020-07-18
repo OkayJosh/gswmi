@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PrayerService } from '../prayer.service';
 import { Prayer } from '../models/prayers';
+import { FormGroup, Validators, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-request-modal',
@@ -8,20 +9,26 @@ import { Prayer } from '../models/prayers';
   styleUrls: ['./request-modal.component.scss']
 })
 export class RequestModalComponent implements OnInit {
-  prayerlist = [];
-  prayerModel = new Prayer();
-  posted = false;
-  constructor(private api:PrayerService) { }
+  public prayerForm = new FormGroup({
+    name: new FormControl("", Validators.required),
+    email: new FormControl("", Validators.required),
+    phonenumber: new FormControl("", Validators.required),
+    prayer_point: new FormControl("", Validators.required)
+
+  });
+  error: any;
+  constructor(private prayerService:PrayerService) { }
+
   prayerSubmit(){
-    console.log(this.prayerModel);
-    this.api.postPrayer(this.prayerModel).subscribe(
-      data => {
-        this.posted = true;
-             },
+    
+    this.prayerService.postPrayer(this.prayerForm.value).subscribe((data : any) => {       
       error => {
-        console.log(error.error);
+        this.error = error;
+        console.log(this.error)
       }
-    );
+      alert("Data saved Successfully"); 
+    })
+    this.prayerForm.reset()
   }
   ngOnInit(): void {
 

@@ -1,7 +1,7 @@
 <div class="container">
         
         <div class="row pt-5 row-grid justify-content-between">
-        <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let post of prayers" >
+        <div class="col-lg-6 col-md-6 col-sm-12" *ngFor="let post of prayers" >
             <div class="card" style="width: 20rem;">
 
             <div class="card-body">
@@ -14,8 +14,8 @@
             </div>
         </div>
         </div>
-        <button *ngIf="nextUrl" (click)='getNext()' class="btn btn-primary">Next</button>
-        <button *ngIf="previousUrl" (click)='getNext()' class="btn btn-primary">Next</button>
+        <button *ngIf="nextUrl" (click)='getNext()' class="btn">Next</button>
+        <button *ngIf="previousUrl" (click)='getNext()' class="btn">Next</button>
     </div>
 
 

@@ -8,6 +8,11 @@
     padding-top: 5em;
     background-attachment: initial;
     background-image: url('../../assets/img/gswmi.jpeg');
+    background-repeat: no-repeat;
+    background-blend-mode: initial;
+    background-size: inherit;
+    background-color: #07213a;
+    backface-visibility: hidden;
 }
 
 @media(max-width: 500px) {

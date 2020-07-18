@@ -44,7 +44,7 @@ const routes: Routes = [
   { path: 'prayer-details/:id', component: PrayerdetailsComponent},
   { path: 'podcastlist', component: PodcastlistComponent},
   { path: 'publications', component: Min1Component}, //publications
-  
+  { path: 'advert', component: Min1Component}, //publications
 ];
 
 @NgModule({

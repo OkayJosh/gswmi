@@ -18,35 +18,32 @@
         <div class="pt-5 container">
 
             <div class="col-lg-7 col-md-6 offset-md-2" >
-                <form (ngSubmit)="prayerSubmit()" *ngIf="posted==false">
+                <form (ngSubmit)="prayerSubmit()" [formGroup]="prayerForm">
                     <div class="form-group"> 
                       <label for="exampleInputEmail1">Name</label>
-                      <input id="postborder" (ngModel)='prayerModel.result.name' name="name" type="text" class="form-control" placeholder="Enter Name" required>
+                      <input id="postborder" formControlName="name" name="name" type="text" class="form-control" placeholder="Enter Name" required>
                     </div>
                     
                     <div class="form-group">
                       <label for="exampleInputEmail1">Email address</label>
-                      <input id="postborder" (ngModel)='prayerModel.result.email' name="email" type="email" class="form-control" placeholder="Enter email" required>
+                      <input id="postborder" formControlName="email" name="email" type="email" class="form-control" placeholder="Enter email" required>
                       <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div>
 
                     <div class="form-group">
                       <label for="exampleInputPhone">Phone number</label>
-                      <input id="postborder" (ngModel)='prayerModel.result.phonenumber' name="phone" type="phonenumber" class="form-control" placeholder="Enter Phone Number" required>
+                      <input id="postborder" formControlName="phonenumber" name="phone" type="phonenumber" class="form-control" placeholder="Enter Phone Number" required>
                     </div>
         
                     <div class="form-group">
                       <label for="exampleInputPassword1">Prayer Point</label>
                       <!-- <input [(ngModel)]='prayerModel.prayer_point' name="prayer_point" type="text" class="form-control" placeholder="Enter Name" required> -->
                       <!-- <input type="text" [(ngModel)]='prayerModel.prayer_point'  class="form-control" > -->
-                      <textarea required id="postborder" (ngModel)='prayerModel.result.prayer_point' name="prayer_point" class="form-control"></textarea>                   
+                      <textarea required id="postborder" formControlName="prayer_point" name="prayer_point" class="form-control"></textarea>                   
                     </div>        
 
                     <button type="submit" class="btn ">Submit</button>
                   </form>
-                  <div *ngIf="posted">
-                    <p>Successfully Posted</p>
-                  </div>
             </div>
 
 
