@@ -17,7 +17,7 @@ import { PodcastlistComponent } from './podcastlist/podcastlist.component';
 import { CreateArticleComponent } from './create-article/create-article.component';
 import { AuthGuard } from './auth/auth.guard';
 import { ViewContactsComponent } from './view-contacts/view-contacts.component';
-
+import { Min1Component} from './min1/min1.component'
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent },
@@ -43,6 +43,7 @@ const routes: Routes = [
   { path: 'prayer-list', component: PrayerlistComponent},
   { path: 'prayer-details/:id', component: PrayerdetailsComponent},
   { path: 'podcastlist', component: PodcastlistComponent},
+  { path: 'publications', component: Min1Component}, //publications
   
 ];
 
