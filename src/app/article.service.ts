@@ -10,7 +10,7 @@ import { Post } from '../app/models/posts';
 })
 export class ArticleService {
 
-  url = 'http://theblogapi.herokuapp.com/posts/';
+  url = 'https://theblogapi.herokuapp.com/posts/';
   private httpOptions: any;
   
   constructor(private http: HttpClient) {

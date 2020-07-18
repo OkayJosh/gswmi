@@ -35,8 +35,13 @@ export class UserService {
     return this.http.post(this.userUrl, user, this.httpOptions);
   }
   // Uses http.post() to get an auth token from djangorestframework-jwt endpoint
-  public login(user): Observable<any> {
-    return this.http.post(this.urlToken, user, this.httpOptions);
+  public login(user) {
+    this.http.post(this.urlToken, user, this.httpOptions).subscribe(
+      data =>{
+        localStorage.setItem('apikey', data['token'] )
+        console.log(data['token']);
+      }
+    )
   }
  
   // Refreshes the JWT token, to extend the time the user is logged in

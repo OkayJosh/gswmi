@@ -9,7 +9,7 @@ import { Contact } from '../app/models/contact';
 })
 export class ContactService {
   
-  url = 'http://theblogapi.herokuapp.com/contact/';
+  url = 'https://theblogapi.herokuapp.com/contact/';
   private httpOptions: any;
 
   constructor(private http: HttpClient) {

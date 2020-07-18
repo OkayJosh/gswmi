@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PrayerService } from '../prayer.service';
-import { Prayerclass } from '../classes/prayerclass';
+import { Prayer } from '../models/prayers';
 
 @Component({
   selector: 'app-request-modal',
@@ -9,7 +9,7 @@ import { Prayerclass } from '../classes/prayerclass';
 })
 export class RequestModalComponent implements OnInit {
   prayerlist = [];
-  prayerModel = new Prayerclass('', '', '');
+  prayerModel = new Prayer();
   posted = false;
   constructor(private api:PrayerService) { }
   prayerSubmit(){

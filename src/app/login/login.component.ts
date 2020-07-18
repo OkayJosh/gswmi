@@ -29,17 +29,9 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    this._userService.login(this.loginForm.value).subscribe(
-      data =>{
-        localStorage.setItem('apikey', data['token'] )
-        console.log(data['token']);
-        this.router.navigate(['/dashboard/create']);
-      },
-      error =>{
-        this.error = error;
-        console.log(error);
-      }
-    )
+    this._userService.login(this.loginForm.value);
+    this.router.navigate(['/dashboard/create']);
+
 
   }
 

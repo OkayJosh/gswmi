@@ -7,9 +7,7 @@ import { JwtHelperService, JwtConfig } from "@auth0/angular-jwt";
 })
 export class AuthenticationService {
   private currentUserToken: any;
-  private currentUserDetails: any;
   private token: any;
-  private errors: any
   private isExpired: Boolean;
   private token_expires: Date;
 
@@ -20,7 +18,8 @@ export class AuthenticationService {
       this.isExpired = helper.isTokenExpired(this.currentUserToken);
   }
 
-  public currentUserValue(): any {
-      return [this.token.username];
+  public currentUserValue(){
+    return [this.token.username];
   }
+      
 }

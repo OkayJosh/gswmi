@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class PrayerService {
 
-  url = 'http://theblogapi.herokuapp.com/prayer_request/';
+  url = 'https://theblogapi.herokuapp.com/prayer_request/';
 
   constructor(private http: HttpClient) { }
 
