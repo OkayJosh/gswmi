@@ -28,7 +28,7 @@ import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
 import { ArticleComponent } from './article/article.component';
 import { DashboardInfoComponent } from './dashboard-info/dashboard-info.component';
 import { UserService } from './user.service';
-import { NgxUiLoaderModule, NgxUiLoaderRouterModule, NgxUiLoaderHttpModule } from 'ngx-ui-loader';
+// import { NgxUiLoaderModule, NgxUiLoaderRouterModule, NgxUiLoaderHttpModule } from 'ngx-ui-loader';
 import { PrayerdetailsComponent } from './prayerdetails/prayerdetails.component';
 import { PrayerlistComponent } from './prayerlist/prayerlist.component';
 import { PodcastlistComponent } from './podcastlist/podcastlist.component';
@@ -72,13 +72,13 @@ import { ViewContactsComponent } from './view-contacts/view-contacts.component';
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
-    NgbModule,
+    // NgbModule,
     // // add social buttons module to NgModule imports
     // JwSocialButtonsModule,
     EditorModule,
-    NgxUiLoaderModule, // import NgxUiLoaderModule
-    NgxUiLoaderRouterModule, // import NgxUiLoaderRouterModule. By default, it will show foreground loader.
-    NgxUiLoaderHttpModule, // import NgxUiLoaderHttpModule. By default, it will show background loader.
+    // NgxUiLoaderModule, // import NgxUiLoaderModule
+    // NgxUiLoaderRouterModule, // import NgxUiLoaderRouterModule. By default, it will show foreground loader.
+    // NgxUiLoaderHttpModule, // import NgxUiLoaderHttpModule. By default, it will show background loader.
     // NgxUiLoaderRouterModule.forRoot({ showForeground: true }),
     JwtModule.forRoot({ 
       config: {
@@ -89,7 +89,7 @@ import { ViewContactsComponent } from './view-contacts/view-contacts.component';
         disallowedRoutes: [],
       }
     }),
-    NgxUiLoaderHttpModule.forRoot({ showForeground: true }),
+    // NgxUiLoaderHttpModule.forRoot({ showForeground: true }),
   ],
   providers: [UserService, { provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js' }],
   bootstrap: [AppComponent]
