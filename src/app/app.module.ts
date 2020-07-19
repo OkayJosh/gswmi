@@ -72,7 +72,7 @@ import { ViewContactsComponent } from './view-contacts/view-contacts.component';
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
-    // NgbModule,
+    NgbModule,
     // // add social buttons module to NgModule imports
     // JwSocialButtonsModule,
     EditorModule,
