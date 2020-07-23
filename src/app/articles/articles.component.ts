@@ -19,6 +19,7 @@ export class ArticlesComponent implements OnInit{
   public article: Observable<Article[]>;
   prevoiusUrl: any;
   nextUrl: any;
+  images = [62, 83, 466, 965, 982, 1043, 738].map((n) => `https://picsum.photos/id/${n}/900/500`);
   constructor(private articleService: ArticleService, private router: Router){
 
   }

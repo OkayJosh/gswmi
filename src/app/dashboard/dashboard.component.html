@@ -1,29 +1,14 @@
 
 <div class="wrapper">
-  <div class="page-header">
-    <img class="path" src="assets/img/blob.png"/>
-
-    <img class="path2" src="assets/img/path2.png"/>
-
-    <img class="shapes triangle" src="assets/img/triunghiuri.png"/>
-
-    <img class="shapes wave" src="assets/img/waves.png"/>
-
-    <img class="shapes squares" src="assets/img/patrat.png"/>
-
-    <img class="shapes circle" src="assets/img/cercuri.png"/>
-
-
-    <div class="container mt-5 pt-5" >
-      <div class="row pt-5 mt-5">     
+    <div class="container" >
+      <div class="row">     
         <div class="col-lg-3 col-md-5 col-sm-12">
           <app-dashboard-info></app-dashboard-info>
         </div>
-        <div class="col-lg-9 col-md-7 col-sm-12">
+        <section class="section-lg col-lg-9 col-md-7 col-sm-12">
             Welcome {{ currentUser }}
           <router-outlet></router-outlet>
-        </div>
+        </section>
       </div>
-      </div>
-  </div>
+    </div>
 </div>

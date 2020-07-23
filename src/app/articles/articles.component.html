@@ -1,6 +1,60 @@
-    <div class="container  mt-5 pt-5">
-        
-        <div class="row pt-5 row-grid justify-content-between">
+<section class="section section-lg">	
+    <div class="container mt-5 pt-5" >
+        <div class="container mt-5" id="" data-version="5.4.1">         
+            <div class="slider-content">
+                <h2>Find your latest Inspirational Writeup here<br> with Gbenga Samuel Wemimo! and get educated on the things of the Spirit</h2>
+                <div class="text">A friend loves at all times, and a brother is born for a time of adversity.</div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="container text-center">
+        <div class="col-12 col-md-12 col-sm-12">
+          <ngb-carousel *ngIf="images">
+            <ng-template ngbSlide>
+              <div class="picsum-img-wrapper">
+                <img [src]="images[0]" alt="Random first slide">
+              </div>
+              <div class="carousel-caption">
+                <h3>The way to God</h3>
+                <p>Make me know Your ways, O Lord; Teach me Your paths.</p>
+              </div>
+            </ng-template>
+            <ng-template ngbSlide>
+              <div class="picsum-img-wrapper">
+                <img [src]="images[1]" alt="Random second slide">
+              </div>
+              <div class="carousel-caption">
+                <h3>Teach Us</h3>
+                <p>That He may teach us concerning His ways
+                  And that we may walk in His paths.</p>
+              </div>
+            </ng-template>
+            <ng-template ngbSlide>
+              <div class="picsum-img-wrapper">
+                <img [src]="images[2]" alt="Random third slide">
+              </div>
+              <div class="carousel-caption">
+                <h3>Feel God</h3>
+                <p>Behold, the heaven and heaven of heavens cannot contain thee.</p>
+              </div>
+            </ng-template>
+          </ngb-carousel> 
+        </div>      
+      </div>
+</section>    
+<section class=" section-lg">
+    <div class="container">
+        <ul class="social-icon-one alternate">
+            <li class="share">Share:</li>
+            <li class="btn btn-icon btn-simple btn-round btn-neutral"><a href="#"><span class="fab fa-facebook"></span></a></li>
+            <li class="btn btn-icon btn-simple btn-round btn-neutral"><a href="#"><span class="fab fa-twitter"></span></a></li>
+            <li class="btn btn-icon btn-simple btn-round btn-neutral"><a href="#"><span class="fab fa-google-plus"></span></a></li>
+            <li class="btn btn-icon btn-simple btn-round btn-neutral"><a href="#"><span class="fab fa-linkedin"></span></a></li>
+            <li class="btn btn-icon btn-simple btn-round btn-neutral"><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
+        </ul>
+        <div class="row "> <h1>Latest Post: </h1></div>
+        <div class="row row-grid">
         <div class="col-lg-6 col-md-6 col-sm-12" *ngFor="let post of article" >
             <div class="card" style="width: 20rem;">
                 <figure *ngIf="post.featured_image">
@@ -24,6 +78,8 @@
         <button *ngIf="nextUrl" (click)='getNext()' class="btn">Next</button>
         <button *ngIf="prevoiusUrl" (click)='getNext()' class="btn">Previous</button>
     </div>
+</section>      
+
 
 
 

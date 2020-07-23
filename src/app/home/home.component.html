@@ -15,86 +15,122 @@
     <img class="shapes squares" src="assets/img/patrat.png" />
 
     <img class="shapes circle" src="assets/img/cercuri.png" />
-
-    <div class="container" (scroll)="open(content)">
-      <div
-      id='backgroungg' class="row row-grid justify-content-between align-items-center text-left"
-      >
-        <div class="col-lg-6 col-md-7 col-sm-12 pt-5 mt-lg-5 mt-sm-5">
-          <h1 id="dispalynone" class="text-white text-info">
-            Gbenga Samuel Wemimo Ministry  <br />
-
-            <span class="text-white text-info"> International </span>
-          </h1>
-          <p class="text-white mb-5 pt-5" >
-            Gbenga Samuel-Wemimo Ministry International, GSWMI, has been 
-            raised by the Holy Spirit to equip the saints as they sort out 
-            their Homo Christus (Christ-kind) status in their walk with the
-             Holy Spirit. The Messianic Community is not ordinary, 
-             and believers are not ordinary by any standard. The ministry's
-              mandate is to bring Neppios (Baby Christians) to the point of 
-              maturity in the things of the Spirit by the leading of the Holy 
-              Ghost. Believers will henceforth live as Christ 
-            and The Word instructs and not tossed to and fro by the elements 
-            of this world.
-        <!-- Gbenga Samuel-Wemimo is a minister of the Gospel, 
-        an evangelist, a counsellor, a discipler, a teacher 
-        and a preacher whose gift through the power of the 
-        Holy Spirit is for the edification of the church and
-        deepening the Individual believer's walk with the Holy Spirit... -->
-          </p>
-          <div class="btn-wrapper mb-3">
-          </div>
-          <div class="btn-wrapper">
-            <div class="button-container">
-              <button
-                class="btn btn-icon btn-simple btn-round btn-neutral mr-1"
-                href="https://twitter.com/GbengaWemimo"
-                target="_blank"
-              >
-                <i class="fab fa-twitter"> </i>
-              </button>
-              <button
-              class="btn btn-icon btn-neutral btn-round btn-simple mr-1"
-              href="https://www.instagram.com/harmonywemimo/"
-              target="_blank"
-                
-              >
-                <i class="fab fa-instagram"> </i>
-              </button>
-              <button
-              class="btn btn-icon btn-neutral btn-round btn-simple mr-1"
-              href="https://www.facebook.com/showlinks2404"
-              target="_blank"
-              >
-                <i class="fab fa-facebook"> </i>
-              </button>
-              
+ 
+    <div class="container mt-5 pt-5 text-center">
+      <div class="col-12 col-md-12 col-sm-12 mt-5 pt-3">
+        <ngb-carousel *ngIf="images">
+          <ng-template ngbSlide>
+            <div class="picsum-img-wrapper">
+              <img [src]="images[0]" alt="Random first slide">
             </div>
-          </div>
-        </div>
-
-        <div class="col-lg-6 col-md-5 col-sm-12 align-items-center pt-5 mt-lg-5 mt-sm-5">
-          <iframe rel="preload" as="embed" src="https://mixlr.com/users/8559625/embed?color=1851be&autoplay=true" 
-          width="100%" height="180px" scrolling="no" frameborder="no" marginheight="0" marginwidth="0">
-        </iframe><small><a href="https://mixlr.com/gswmi" style="color:#1a1a1a;text-align:left; font-family:Helvetica, sans-serif; font-size:11px;">gswmi is on Mixlr</a></small>
-        </div>
-
-        <p><br/></p>
-        <div class="align-items-center"><h1 class="text-white mb-3" ></h1></div>
-        <!-- <p>We support a lot of People and Ministries with varying degrees of need.
-          If the Holy Spirit has asked you to reach out to such people and/or Ministries through us, kindly do so.
-          You can also support Gbenga Samuel-Wemimo's Ministry as he takes the gospel of Jesus in a unique way to the whole world
-          financially by crediting <code>account no 1223897578 Access Bank</code> and/or <code>Guarantee Trust Bank Account no 0147873287</code> 
-          Kindly indicate the purpose of your donation clearly through a mail or a DM
-          <p>Thank youGod bless you</p> -->
-      </div>
-    </div>
+            <div class="carousel-caption">
+              <h3>The way to God</h3>
+              <p>Make me know Your ways, O Lord; Teach me Your paths.</p>
+            </div>
+          </ng-template>
+          <ng-template ngbSlide>
+            <div class="picsum-img-wrapper">
+              <img [src]="images[1]" alt="Random second slide">
+            </div>
+            <div class="carousel-caption">
+              <h3>Teach Us</h3>
+              <p>That He may teach us concerning His ways
+                And that we may walk in His paths.</p>
+            </div>
+          </ng-template>
+          <ng-template ngbSlide>
+            <div class="picsum-img-wrapper">
+              <img [src]="images[2]" alt="Random third slide">
+            </div>
+            <div class="carousel-caption">
+              <h3>Feel God</h3>
+              <p>Behold, the heaven and heaven of heavens cannot contain thee.</p>
+            </div>
+          </ng-template>
+        </ngb-carousel> 
+      </div>      
+    </div>   
   </div>
   <section class="section section-lg">
     <section class="section">
-      <img class="path" src="assets/img/path4.png" />
-
+      <div class="container">
+        <div
+        id='' class="row row-grid justify-content-between align-items-center text-left"
+        >
+          <div class="col-lg-6 col-md-7 col-sm-12 pt-5 mt-lg-5 mt-sm-5">
+            <h1 id="dispalynone" class="text-white text-info">
+              Gbenga Samuel Wemimo Ministry  <br />
+  
+              <span class="text-white text-info"> International </span>
+            </h1>
+            <p class="text-white mb-5 pt-5" >
+              Gbenga Samuel-Wemimo Ministry International, GSWMI, has been 
+              raised by the Holy Spirit to equip the saints as they sort out 
+              their Homo Christus (Christ-kind) status in their walk with the
+               Holy Spirit. The Messianic Community is not ordinary, 
+               and believers are not ordinary by any standard. The ministry's
+                mandate is to bring Neppios (Baby Christians) to the point of 
+                maturity in the things of the Spirit by the leading of the Holy 
+                Ghost. Believers will henceforth live as Christ 
+              and The Word instructs and not tossed to and fro by the elements 
+              of this world.
+          <!-- Gbenga Samuel-Wemimo is a minister of the Gospel, 
+          an evangelist, a counsellor, a discipler, a teacher 
+          and a preacher whose gift through the power of the 
+          Holy Spirit is for the edification of the church and
+          deepening the Individual believer's walk with the Holy Spirit... -->
+            </p>
+            <div class="btn-wrapper mb-3">
+            </div>
+            <div class="btn-wrapper">
+              <div class="button-container">
+                <button
+                  class="btn btn-icon btn-simple btn-round btn-neutral mr-1"
+                  href="https://twitter.com/GbengaWemimo"
+                  target="_blank"
+                >
+                  <i class="fab fa-twitter"> </i>
+                </button>
+                <button
+                class="btn btn-icon btn-neutral btn-round btn-simple mr-1"
+                href="https://www.instagram.com/harmonywemimo/"
+                target="_blank"
+                  
+                >
+                  <i class="fab fa-instagram"> </i>
+                </button>
+                <button
+                class="btn btn-icon btn-neutral btn-round btn-simple mr-1"
+                href="https://www.facebook.com/showlinks2404"
+                target="_blank"
+                >
+                  <i class="fab fa-facebook"> </i>
+                </button>
+                
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-lg-6 col-md-5 col-sm-12 align-items-center pt-5 mt-lg-5 mt-sm-5">
+            <iframe rel="preload" as="embed" src="https://mixlr.com/users/8559625/embed?color=1851be&autoplay=true" 
+            width="100%" height="180px" scrolling="no" frameborder="no" marginheight="0" marginwidth="0">
+          </iframe><small><a href="https://mixlr.com/gswmi" style="color:#1a1a1a;text-align:left; font-family:Helvetica, sans-serif; font-size:11px;">gswmi is on Mixlr</a></small>
+          </div>
+  
+          <p><br/></p>
+          <div class="align-items-center"><h1 class="text-white mb-3" ></h1></div>
+          <!-- <p>We support a lot of People and Ministries with varying degrees of need.
+            If the Holy Spirit has asked you to reach out to such people and/or Ministries through us, kindly do so.
+            You can also support Gbenga Samuel-Wemimo's Ministry as he takes the gospel of Jesus in a unique way to the whole world
+            financially by crediting <code>account no 1223897578 Access Bank</code> and/or <code>Guarantee Trust Bank Account no 0147873287</code> 
+            Kindly indicate the purpose of your donation clearly through a mail or a DM
+            <p>Thank youGod bless you</p> -->
+        </div>
+      </div>
+    </section>
+  </section>
+  <section class="section section-lg">
+    <section class="section">
       <div class="container">
         <div class="row row-grid justify-content-between">
           <div class="col-md-5 mt-lg-5 p-2 m-2">
@@ -215,11 +251,6 @@
     </section>
   </section>
   <section class="section section-lg" id="ministries">
-    <img class="path" src="assets/img/path4.png" />
-
-    <img class="path2" src="assets/img/path5.png" />
-
-    <img class="path3" src="assets/img/path2.png" />
 
     <div class="container">
       <div class="row justify-content-center">
@@ -506,28 +537,3 @@
     </div>
   </section>
 </div>
-
-<ng-template #content let-modal>
-  <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
-    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <form>
-      <div class="form-group">
-        <label for="dateOfBirth">Date of birth</label>
-        <div class="input-group">
-          <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
-          <div class="input-group-append">
-            <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
-          </div>
-        </div>
-      </div>
-    </form>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
-  </div>
-</ng-template>

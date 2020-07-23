@@ -1,7 +1,6 @@
-
 <div class="row" >
     <div class="container">
-        <div class="container col-lg-12 col-md-6 offset-md-2" >
+        <div class="container col-lg-12 col-md-6" >
           <div *ngIf="error">{{error.error}}</div>
             <form class="form" (ngSubmit)="onSubmit()" [formGroup]="postForm">
               <div class="container">
@@ -64,9 +63,7 @@
                 </div>
               </div>
                 <button type="submit" class="btn">Submit</button>
-              </form>
+            </form>
         </div>
-
-
     </div>
-    </div>
+</div>

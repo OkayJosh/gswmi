@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
   closeResult = '';
   modalcontent: any
   constructor(private modalService: NgbModal) { }
-
+  images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
 
   ngOnInit() {
     const body = document.getElementsByTagName('body')[0];
