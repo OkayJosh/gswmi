@@ -15,11 +15,18 @@
                             <div class="container">
                                 <h1 style="color:orange;text-align: center">{{episode.title}}</h1>    
                                 <hr style="color: blue;">    
-                                <span>
-                                   <div class='card'> 
-                                    <img class="fit-picture"
-                                    src="{{episode.image_url }}"
-                                    alt="{{episode.title }}">
+                              
+                                   <div class='card' style="width: 20rem;"> 
+                                       <figure>
+                                        <img class="fit-picture"
+                                        src="{{episode.image_url }}"
+                                        alt="{{episode.title }}">
+                                        <img class="fit-picture"
+                                        src="{{episode.image_url }}"
+                                        alt="{{episode.title }}">
+                                        <figcaption>{{episode.title}}</figcaption>
+                                       </figure>
+
                                    
                                    <div class="card-body">
                                     <audio preload id="myAudio" controls 
@@ -27,7 +34,7 @@
                                     </audio>  
                                     </div>                                      
                                    </div>     
-                                </span>     
+                                 
                             </div>    
                     </div>  
                 </div>
