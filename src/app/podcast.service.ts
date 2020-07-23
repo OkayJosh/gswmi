@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +18,7 @@ export class PodcastService {
 
 
   getpodcasturl = 'https://api.spreaker.com/v2/users/11845707/episodes'
+  url = 'https://api.spreaker.com/v2/episodes/'
   constructor(private http: HttpClient) { 
     this.httpOptions = {
       headers: new HttpHeaders({
@@ -34,5 +37,8 @@ export class PodcastService {
   }
   getNextPodcast(url){
       return this.http.get<any>(url, this.httpOptions);
+  }
+  getPodcast(id): Observable<any[]>{
+    return this.http.get<any[]>(this.url + id)
   }
 }

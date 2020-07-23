@@ -12,9 +12,7 @@
                           alt="{{ i.title }}">
                       <div class="card-body">
                           <h4 class="card-title">{{ i.title }}</h4>
-                          <audio id="myAudio" controls> 
-                              <source src="{{ i.playback_url }}" type="audio/mpeg">               
-                          </audio>
+                          <button (click)="getPodcastById(i.episode_id)" type="submit" class="btn">Listen</button>
                       </div>
                       </div>
                   </div>

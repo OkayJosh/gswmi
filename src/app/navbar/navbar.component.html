@@ -12,13 +12,6 @@
       >
         <span> GSWMI• </span> 
       </a>
-      <a
-        class="navbar-brand"
-        routerLink='/'
-        placement="bottom"
-      >
-        <span> Ministries </span> 
-      </a>
       <button
       class="btn btn-icon btn-simple btn-round btn-neutral mr-1"
       (click)="onwhatsappclick()"
@@ -83,7 +76,7 @@
             <p class="d-lg-none d-xl-none">Twitter</p>
           </a>
         </li>
-        <li>
+        <li class="nav-item">
           <a
           class="nav-link" routerLink="/podcastlist"
         >
@@ -116,6 +109,14 @@
             routerLink='/publications'
           >
             publications
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink='/publications'
+          >
+            ministries
           </a>
         </li>
       </ul>

@@ -20,6 +20,7 @@ import { ViewContactsComponent } from './view-contacts/view-contacts.component';
 import { Min1Component} from './min1/min1.component'
 import { Min2Component } from './min2/min2.component';
 import { Min3Component } from './min3/min3.component';
+import { Min4Component } from './min4/min4.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent },
@@ -44,6 +45,7 @@ const routes: Routes = [
   { path: 'podcast', component: PodcastComponent },
   { path: 'blog', component: ArticlesComponent},
   { path: 'blog-details', component: ArticleComponent},
+  { path: 'podcast-details', component: Min4Component},
   { path: 'prayer-list', component: PrayerlistComponent},
   { path: 'prayer-details/:id', component: PrayerdetailsComponent},
   { path: 'podcastlist', component: PodcastlistComponent},
