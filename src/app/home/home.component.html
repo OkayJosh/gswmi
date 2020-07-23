@@ -21,6 +21,15 @@
         <ngb-carousel *ngIf="images">
           <ng-template ngbSlide>
             <div class="picsum-img-wrapper">
+              <img src="assets/img/gswmi.jpeg" alt="gswmi">
+            </div>
+            <div class="carousel-caption">
+              <h3>Get Inspired</h3>
+              <p>We can write nothing without the touch of the holy gost.</p>
+            </div>
+          </ng-template>
+          <ng-template ngbSlide>
+            <div class="picsum-img-wrapper">
               <img [src]="images[0]" alt="Random first slide">
             </div>
             <div class="carousel-caption">
@@ -48,7 +57,7 @@
             </div>
           </ng-template>
         </ngb-carousel> 
-      </div>      
+      </div>    
     </div>   
   </div>
   <section class="section section-lg">
