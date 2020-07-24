@@ -19,6 +19,8 @@ class ImageSnippet {
 
 export class CreateArticleComponent { 
 
+  selectedFile: ImageSnippet;
+
   private editorSubject: Subject<any> = new AsyncSubject();
   public postForm = new FormGroup({
     title: new FormControl("", Validators.required),
@@ -30,7 +32,7 @@ export class CreateArticleComponent {
   res: any;
   error: any;
   currentUser: any;
-
+  file: File
   constructor(private articleservice:ArticleService, private auth: AuthenticationService, private router: Router) {
     this.currentUser = auth.currentUserValue();
    }
@@ -39,16 +41,11 @@ export class CreateArticleComponent {
     this.editorSubject.next(e.editor);
     this.editorSubject.complete();
   }
-  processFile(imageInput: any) {
-    const file: File = imageInput.files[0];
+  processFile(event) {
+    this.file = event.target.files[0];
     const reader = new FileReader();
-
-    reader.addEventListener('load', (event: any) => {
-
-      this.postForm.value.featured_image = new ImageSnippet(event.target.result, file);
-    });
-
-    reader.readAsDataURL(file);
+    reader.readAsDataURL(this.file);
+    this.postForm.setValue({featured_image: this.file});
   }
 
   onSubmit(){    
