@@ -1,42 +1,128 @@
-<div class="row row-grid pt-5 mt-5">
-    <div class="col-lg-12 col-md-12 mt-5 pt-5">
-        <div class="container mt-5">
-            <h1> GSWMI has Event Find them Below:</h1>   
-            <ul class="social-icon-one alternate">
-                <li class="share">Share:</li>
-                <li class="btn btn-icon btn-simple btn-round btn-neutral"><a href="#"><span class="fab fa-facebook"></span></a></li>
-                <li class="btn btn-icon btn-simple btn-round btn-neutral"><a href="#"><span class="fab fa-twitter"></span></a></li>
-                <li class="btn btn-icon btn-simple btn-round btn-neutral"><a href="#"><span class="fab fa-google-plus"></span></a></li>
-                <li class="btn btn-icon btn-simple btn-round btn-neutral"><a href="#"><span class="fab fa-linkedin"></span></a></li>
-                <li class="btn btn-icon btn-simple btn-round btn-neutral"><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
-            </ul>
-        </div>
-        <div class="row">
-            <div class="col-lg-12 col-sm-12" *ngFor="let post in publications">
-                <div class="card card-stats">
-                    <div class="card-body">
-                    <div class="row">
-                        <div class="col-5 col-md-4">
-                        <div class="icon-big text-center icon-warning">
-                            <img class="" src="{{post.photo}}"/>
-                        </div>
-                        </div>
-                        <div class="col-7 col-md-8">
-                        <div class="numbers">
-                            <p>{{post.name}}</p>
-                            <p>{{post.price}}</p>
-                            <p class="card-category"></p>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
+<div class="wrapper">
+
+  <section class="section-lg">
+    Find out about our latest event below:
+    <section class="section">
+      <div class="container" *ngFor='let ievent of event'>
+        <div
+        id='' class="row row-grid justify-content-between align-items-center text-left"
+        >
+          <div class="col-lg-6 col-md-7 col-sm-12  mt-sm-5">
+            <h1 id="dispalynone" class="text-white text-info">
+              {{ievent.name}}  <br />
+            </h1>
+            
+              <h4>
+                <p class="text-white mb-5 pt-5" [innerHTML]="ievent.info" >
+              </p>
+              </h4>
+  
+            <div class="btn-wrapper mb-3">
             </div>
+            <div class="btn-wrapper">
+              <a
+              class="btn btn-icon btn-neutral btn-round btn-simple mr-1"
+              href="{{ievent.link}}"
+              target="_blank"
+            >
+              <i class="fab fa-telegram"> </i>
+            </a>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-5 col-sm-12  mt-sm-5">
+            <h1 id="dispalynone" class="text-white text-info" [innerHTML]="ievent.summary">
+              <br />
+              {{ievent.summary}}
+            </h1>
+              <span class="text-white text-info">  </span>
+              <div class="container">
+              
+              <p class="text-white mb-5 pt-5" >
+                <figure *ngIf="ievent.image">
+                    <img class="fit-picture" src="{{ievent.image}}"
+                            alt="{{ievent.name}}">
+                    <figcaption>{{ievent.name}}</figcaption>
+                </figure>                
+              </p>
+              </div>
+            <div class="btn-wrapper mb-3">
+            </div>
+            <div class="btn-wrapper">
+              <a
+              class="btn btn-icon btn-neutral btn-round btn-simple mr-1"
+              href="{{ievent.link}}"
+              target="_blank"
+            >
+              <i class="fab fa-whatsapp"> </i>
+            </a>
+
+            </div>
+          </div>
+          <p><br/></p>
+          <div class="align-items-center"><h1 class="text-white mb-3" ></h1></div>
+
         </div>
+      </div>
+      <button *ngIf="nextUrl" (click)='getNext()' class="btn">Next</button>
+      <button *ngIf="prevoiusUrl" (click)='getPrevious()' class="btn">Previous</button>
+    </section>
+  </section>
+  <section class="section-lg">
+    <img class="path" src="assets/img/path4.png" />
+
+    <div class="col-md-12">
+      <div class="card card-chart card-plain">
+        <div class="card-header">
+          <div class="row">
+            <div class="col-sm-6 text-left">
+              <hr class="line-primary" />
+
+              <h5 class="card-category">Find Advert </h5>
+              <h2 class="card-title">Here</h2>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+            <app-adverts></app-adverts>
+        </div>
+      </div>
     </div>
+  </section>
+  <section class="section section-lg section-coins">
+    <img class="path" src="assets/img/path3.png" />
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <hr class="line-info" />
+
+          <h1>
+            How Can We Pray For You?
+          </h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card card-coin card-plain">
+            <div class="card-header">
+              <img class="img-center img-fluid" src="assets/img/gswmi.jpeg" />
+            </div>
+            <div class="card-body">
+
+              <div class="row text-center">
+                <h3><span class=""> Welcome, friend. 
+            These are uncertain times filled with anxiety and suffering, 
+            and you may be wrestling with difficult questions, 
+            or perhaps need a message of encouragement or hope. 
+            May we offer to pray for you and your concerns? </span> </h3>
+              </div>
+            </div>
+            <div class="card-footer text-center">
+              <button type="button" class="btn btn-info btn-simple" routerLink="/prayer">Submit Prayer Request</button> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
-
-
-
-
-

@@ -12,7 +12,7 @@
             </ul>
         </div>
         <div class="row">
-            <div class="col-lg-12 col-sm-12" *ngFor="let post in publications">
+            <div class="col-lg-12 col-sm-12" *ngFor="let post of publications">
                 <div class="card card-stats">
                     <div class="card-body">
                     <div class="row">
@@ -23,8 +23,8 @@
                         </div>
                         <div class="col-7 col-md-8">
                         <div class="numbers">
-                            <p>{{post.name}}</p>
-                            <p>{{post.price}}</p>
+                            Title<p>{{post.name}}</p>
+                           Price  <p>N{{post.price}}</p>
                             <p class="card-category"></p>
                         </div>
                         </div>

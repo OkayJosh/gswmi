@@ -1,1 +1,86 @@
-<p>create-event works!</p>
+<div class="row" >
+    <div class="container">
+        <div class="container col-lg-12 col-md-6" >
+          <div *ngIf="error">{{error.error}}</div>
+            <form class="form" (ngSubmit)="onSubmit()" [formGroup]="eventForm">
+              <div class="container">
+                <div class="clearfix">
+                  <div class= "form-group">
+                    <input
+                    name="name"
+                    class="input-group"
+                    formControlName="name"
+                    placeholder="Name of your Ministry"
+                    type="text"/>
+              
+                  <span *ngIf="eventForm.get('name').invalid||(
+                    eventForm.get('name').dirty||
+                    eventForm.get('name').touched)">
+                    Name is required
+                  </span>
+                  </div>
+                </div>
+                <div class="clearfix">
+                    <div class= "form-group">
+                      <input
+                      name="link"
+                      class="input-group"
+                      formControlName="link"
+                      placeholder="Group Link"
+                      type="url"/>
+                
+                    <span *ngIf="eventForm.get('link').invalid||(
+                      eventForm.get('link').dirty||
+                      eventForm.get('link').touched)">
+                      Group link is required
+                    </span>
+                    </div>
+                  </div>
+                <div class="clearfix">
+                  <div class= "">
+                    <input
+                    #imageInput
+                    name="image"
+                    class="form-group"
+                    formControlName="image"
+                    accept="image/png, image/jpeg"
+                    type="file"
+                    (change)="processFile($event)">
+                    
+                  </div>
+                </div>              
+                <div class="form-group">
+                  <editor
+                  rel="preload"
+                    formControlName="info"
+                    (onInit)="handleEditorInit($event)"
+                    [init]="{
+                      base_url: '/tinymce', 
+                      suffix: '.min',
+                      menubar: true,
+                      min_height: 150
+                    }"
+                  ></editor>
+              
+                  <div class="form-group">
+                    <div *ngIf="eventForm.controls.info.hasError('maxlength')">
+                      Your post exceeds exceeds the character limit
+                      {{ eventForm.controls.info.getError('maxlength').actualLength }} /
+                      {{ eventForm.controls.info.getError('maxlength').requiredLength }}
+                    </div>
+              
+                    <div *ngIf="eventForm.controls.info.touched && eventForm.controls.info.hasError('required')">
+                      This form is required
+                    </div>
+                    <div *ngIf="this.error">
+                      {{error}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+

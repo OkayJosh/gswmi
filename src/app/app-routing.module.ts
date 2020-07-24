@@ -57,7 +57,7 @@ const routes: Routes = [
   { path: 'podcastlist', component: PodcastlistComponent},
   { path: 'publications', component: Min3Component}, //publications
   { path: 'ministries', component: MinitryComponent},
-  { path: 'event', component: EventComponent},
+  { path: 'events', component: EventComponent},
 ];
 
 @NgModule({

@@ -8,7 +8,7 @@ import { Observable } from 'rxjs/Observable';
 })
 export class AdvertService {
 
-  url = 'https://theblogapi.herokuapp.com/publication/'
+  url = 'https://theblogapi.herokuapp.com/advert/'
   private httpOptions: any;
   constructor(private http: HttpClient) {
     this.httpOptions = {

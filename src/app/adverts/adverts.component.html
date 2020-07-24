@@ -1,0 +1,13 @@
+<div class="container mt-5 pt-5 text-center">
+    <div class="col-12 col-md-12 col-sm-12 mt-5 pt-3">
+      
+        <div *ngFor='let advert of adverts'>
+            <figure *ngIf="advert.photo">
+                <img class="fit-picture" src={{advert.photo}}
+                        alt="{{advert.name}}">
+                <figcaption>{{advert.name}}</figcaption>
+            </figure>
+        </div>
+      
+    </div>    
+</div>

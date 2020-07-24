@@ -56,4 +56,18 @@ export class ArticlesComponent implements OnInit{
       }
     )
   }
+  getPrevious(){
+    this.articleService.getNextArticle(this.prevoiusUrl).subscribe(
+      data =>{
+        this.article = data['results'];
+        this.collectionSize = data['count'];
+        this.nextUrl = data['next'];
+        this.prevoiusUrl = data['previous'];
+        console.log(data);
+      },
+      error =>{
+        console.log(error.error);
+      }
+    )
+  }
 }

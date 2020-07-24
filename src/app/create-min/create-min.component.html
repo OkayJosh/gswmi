@@ -1,1 +1,102 @@
-<p>create-min works!</p>
+<div class="row" >
+    <div class="container">
+        <div class="container col-lg-12 col-md-6" >
+          <div *ngIf="error">{{error.error}}</div>
+            <form class="form" (ngSubmit)="onSubmit()" [formGroup]="minForm">
+              <div class="container">
+                <div class="clearfix">
+                  <div class= "form-group">
+                    <input
+                    name="name"
+                    class="input-group"
+                    formControlName="name"
+                    placeholder="Name of your Ministry"
+                    type="text"/>
+              
+                  <span *ngIf="minForm.get('name').invalid||(
+                    minForm.get('name').dirty||
+                    minForm.get('name').touched)">
+                    Name is required
+                  </span>
+                  </div>
+                </div>
+                <div class="clearfix">
+                    <div class= "form-group">
+                      <input
+                      name="link"
+                      class="input-group"
+                      formControlName="link"
+                      placeholder="Group Link"
+                      type="url"/>
+                
+                    <span *ngIf="minForm.get('link').invalid||(
+                      minForm.get('link').dirty||
+                      minForm.get('link').touched)">
+                      Group link is required
+                    </span>
+                    </div>
+                  </div>
+                  <div class="clearfix">
+                    <div class= "form-group">
+                      <input
+                      name="vlink"
+                      class="input-group"
+                      formControlName="vlink"
+                      placeholder="Video Link"
+                      type="url"/>
+                
+                    <span *ngIf="minForm.get('vlink').invalid||(
+                      minForm.get('vlink').dirty||
+                      minForm.get('vlink').touched)">
+                      Ministry video link is required
+                    </span>
+                    </div>
+                  </div>
+                <div class="clearfix">
+                  <div class= "">
+                    <input
+                    #imageInput
+                    name="image"
+                    class="form-group"
+                    formControlName="image"
+                    accept="image/png, image/jpeg"
+                    type="file"
+                    (change)="processFile($event)">
+                    
+                  </div>
+                </div>              
+                <div class="form-group">
+                  <editor
+                  rel="preload"
+                    formControlName="info"
+                    (onInit)="handleEditorInit($event)"
+                    [init]="{
+                      base_url: '/tinymce', 
+                      suffix: '.min',
+                      menubar: true,
+                      min_height: 150
+                    }"
+                  ></editor>
+              
+                  <div class="form-group">
+                    <div *ngIf="minForm.controls.info.hasError('maxlength')">
+                      Your post exceeds exceeds the character limit
+                      {{ minForm.controls.info.getError('maxlength').actualLength }} /
+                      {{ minForm.controls.info.getError('maxlength').requiredLength }}
+                    </div>
+              
+                    <div *ngIf="minForm.controls.info.touched && minForm.controls.info.hasError('required')">
+                      This form is required
+                    </div>
+                    <div *ngIf="error">
+                      {{error}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
