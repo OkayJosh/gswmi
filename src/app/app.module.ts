@@ -38,6 +38,10 @@ import { Min2Component } from './min2/min2.component';
 import { Min3Component } from './min3/min3.component';
 import { Min4Component } from './min4/min4.component';
 import { ViewContactsComponent } from './view-contacts/view-contacts.component';
+import { MinitryComponent } from './minitry/minitry.component';
+import { CreateMinComponent } from './create-min/create-min.component';
+import { EventComponent } from './event/event.component';
+import { CreateEventComponent } from './create-event/create-event.component';
 
 
 @NgModule({
@@ -64,7 +68,7 @@ import { ViewContactsComponent } from './view-contacts/view-contacts.component';
     Min1Component, 
     Min2Component, 
     Min3Component, 
-    Min4Component, ViewContactsComponent
+    Min4Component, ViewContactsComponent, MinitryComponent, CreateMinComponent, EventComponent, CreateEventComponent
   ],
   imports: [
     BrowserModule,

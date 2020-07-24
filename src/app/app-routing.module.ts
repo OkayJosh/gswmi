@@ -21,6 +21,10 @@ import { Min1Component} from './min1/min1.component'
 import { Min2Component } from './min2/min2.component';
 import { Min3Component } from './min3/min3.component';
 import { Min4Component } from './min4/min4.component';
+import { MinitryComponent } from './minitry/minitry.component'
+import { CreateMinComponent } from './create-min/create-min.component'
+import { EventComponent } from './event/event.component'
+import { CreateEventComponent} from './create-event/create-event.component'
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent },
@@ -36,6 +40,8 @@ const routes: Routes = [
         {path: 'notification', component: ViewContactsComponent},
         { path: 'createPub', component: Min1Component}, //publications
         {path: 'createadvert', component: Min2Component},
+        { path: 'createmin', component: CreateMinComponent},
+        { path: 'create-event', component: CreateEventComponent},
       ] },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '*', redirectTo: 'home', pathMatch: 'full' },
@@ -50,6 +56,8 @@ const routes: Routes = [
   { path: 'prayer-details/:id', component: PrayerdetailsComponent},
   { path: 'podcastlist', component: PodcastlistComponent},
   { path: 'publications', component: Min3Component}, //publications
+  { path: 'ministries', component: MinitryComponent},
+  { path: 'event', component: EventComponent},
 ];
 
 @NgModule({
