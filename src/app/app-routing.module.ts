@@ -40,7 +40,7 @@ const routes: Routes = [
         {path: 'notification', component: ViewContactsComponent},
         { path: 'createPub', component: Min1Component}, //publications
         {path: 'createadvert', component: Min2Component},
-        { path: 'createmin', component: CreateMinComponent},
+        { path: 'create-min', component: CreateMinComponent},
         { path: 'create-event', component: CreateEventComponent},
       ] },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
