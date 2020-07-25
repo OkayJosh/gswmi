@@ -52,5 +52,12 @@ export class UserService {
   public logout() {
     localStorage.setItem('apikey', null);
   }
+
+  getUsers(): Observable<any>{
+    return this.http.get<any>(this.userUrl);
+  }
+  getNextUsers(url){
+    return this.http.get<any>(url);
+  }
  
 }

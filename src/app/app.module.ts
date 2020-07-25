@@ -43,6 +43,7 @@ import { CreateMinComponent } from './create-min/create-min.component';
 import { EventComponent } from './event/event.component';
 import { CreateEventComponent } from './create-event/create-event.component';
 import { AdvertsComponent } from './adverts/adverts.component';
+import { SpeakersComponent } from './speakers/speakers.component';
 
 
 @NgModule({
@@ -69,7 +70,7 @@ import { AdvertsComponent } from './adverts/adverts.component';
     Min1Component, 
     Min2Component, 
     Min3Component, 
-    Min4Component, ViewContactsComponent, MinitryComponent, CreateMinComponent, EventComponent, CreateEventComponent, AdvertsComponent
+    Min4Component, ViewContactsComponent, MinitryComponent, CreateMinComponent, EventComponent, CreateEventComponent, AdvertsComponent, SpeakersComponent
   ],
   imports: [
     BrowserModule,

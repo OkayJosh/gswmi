@@ -1,10 +1,10 @@
 <div class="wrapper">
     <div class="container mt-5 pt-5 text-center">
         <div class="col-12 col-md-12 col-sm-12 mt-5 pt-3">
-        <ngb-carousel *ngIf="minstry">
-            <ng-template ngbSlide *ngFor="let min of minstry">
+        <ngb-carousel *ngIf="speakers">
+            <ng-template ngbSlide *ngFor="let speaker of speakers">
             <div class="picsum-img-wrapper">
-                <img src="{{min.image}}" alt="{{min.name}}">
+                <img src={{speaker.profile_image}} alt="{{speaker.username}}">
             </div>
             </ng-template>
         </ngb-carousel> 
@@ -14,58 +14,28 @@
     </div>   
     <section class="section-lg">
     <section class="section">
-    <div class="container" *ngFor='let min of minstry'>
+    <div class="container" *ngFor='let speaker of speakers'>
         <div
         id='' class="row row-grid justify-content-between align-items-center text-left"
         >
         <div class="col-lg-6 col-md-7 col-sm-12  mt-sm-5">
             <h1 id="dispalynone" class="text-white text-info">
-            {{min.name}}  <br />
-
-            <span class="text-white text-info"> International </span>
+                {{speaker.last_name}} {{speaker.first_name}}  <br />
             </h1>
             
             <h4>
                 <p class="text-white mb-5 pt-5" >
-                {{min.info}}
+                {{speaker.bio}}
             </p>
             </h4>
-
-            <div class="btn-wrapper mb-3">
-            </div>
-            <div class="btn-wrapper">
-            <a
-            class="btn btn-icon btn-neutral btn-round btn-simple mr-1"
-            href="{{min.link}}"
-            target="_blank"
-            >
-            <i class="fab fa-telegram"> </i>
-            </a>
-            </div>
         </div>
         <div class="col-lg-6 col-md-5 col-sm-12  mt-sm-5">
-            <h1 id="dispalynone" class="text-white text-info">
-            {{min.summary}}<br />
-            </h1>
             <span class="text-white text-info">  </span>
             <div class="container">
             
-            <p class="text-white mb-5 pt-5"*ngIf='min.vlink' >
-                <iframe width="100%" height="315" src="https://www.youtube.com/embed/{{min.vlink}}" 
-                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p class="text-white mb-5 pt-5"*ngIf='speaker.profile_image' >
+                <img src="{{speaker.profile_image}}" alt="{{speaker.username}}">
             </p>
-            </div>
-            <div class="btn-wrapper mb-3">
-            </div>
-            <div class="btn-wrapper">
-            <a
-            class="btn btn-icon btn-neutral btn-round btn-simple mr-1"
-            href="{{min.link}}"
-            target="_blank"
-            >
-            <i class="fab fa-whatsapp"> </i>
-            </a>
-
             </div>
         </div>
         <p><br/></p>
@@ -74,7 +44,7 @@
         </div>
     </div>
     <button *ngIf="nextUrl" (click)='getNext()' class="btn">Next</button>
-    <button *ngIf="prevoiusUrl" (click)='getPrevious()' class="btn">Previous</button>
+    <button *ngIf="previousUrl" (click)='getPrevious()' class="btn">Previous</button>
     </section>
     </section>
     <section class="section-lg">

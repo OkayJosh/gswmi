@@ -25,6 +25,7 @@ import { MinitryComponent } from './minitry/minitry.component'
 import { CreateMinComponent } from './create-min/create-min.component'
 import { EventComponent } from './event/event.component'
 import { CreateEventComponent} from './create-event/create-event.component'
+import { SpeakersComponent } from './speakers/speakers.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent },
@@ -32,7 +33,7 @@ const routes: Routes = [
       canActivate: [AuthGuard],
       canActivateChild: [AuthGuard],
       children: [
-        {path: '', redirectTo: 'create', pathMatch: 'prefix'},
+        {path: '', redirectTo: 'notification', pathMatch: 'prefix'},
         {path: 'prayer-list', component: PrayerlistComponent},
         {path: 'radio', component: OurRadioComponent},
         {path: 'podcast', component: PodcastComponent},
@@ -58,6 +59,7 @@ const routes: Routes = [
   { path: 'publications', component: Min3Component}, //publications
   { path: 'ministries', component: MinitryComponent},
   { path: 'events', component: EventComponent},
+  { path: 'speakers', component: SpeakersComponent},
 ];
 
 @NgModule({
