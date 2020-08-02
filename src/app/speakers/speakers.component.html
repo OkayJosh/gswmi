@@ -1,6 +1,6 @@
 <div class="wrapper">
-    <div class="container mt-5 pt-5 text-center">
-        <div class="col-12 col-md-12 col-sm-12 mt-5 pt-3">
+    <div class="text-center">
+        <div class="col-12 col-md-12 col-sm-12 ">
         <ngb-carousel *ngIf="speakers">
             <ng-template ngbSlide *ngFor="let speaker of speakers">
             <div class="picsum-img-wrapper">
@@ -8,17 +8,15 @@
             </div>
             </ng-template>
         </ngb-carousel> 
-        </div>
-        <div class="col-12 col-md-12 col-sm-12 mt-5 pt-3">
-        </div>    
+        </div>>    
     </div>   
-    <section class="section-lg">
-    <section class="section">
+    <section class="">
+    <section class="">
     <div class="container" *ngFor='let speaker of speakers'>
         <div
         id='' class="row row-grid justify-content-between align-items-center text-left"
         >
-        <div class="col-lg-6 col-md-7 col-sm-12  mt-sm-5">
+        <div class="col-lg-6 col-md-7 col-sm-12">
             <h1 id="dispalynone" class="text-white text-info">
                 {{speaker.last_name}} {{speaker.first_name}}  <br />
             </h1>
@@ -29,7 +27,7 @@
             </p>
             </h4>
         </div>
-        <div class="col-lg-6 col-md-5 col-sm-12  mt-sm-5">
+        <div class="col-lg-6 col-md-5 col-sm-12">
             <span class="text-white text-info">  </span>
             <div class="container">
             
@@ -39,7 +37,7 @@
             </div>
         </div>
         <p><br/></p>
-        <div class="align-items-center"><h1 class="text-white mb-3" ></h1></div>
+        <div class="align-items-center"><h1 class="text-white" ></h1></div>
 
         </div>
     </div>
@@ -47,7 +45,7 @@
     <button *ngIf="previousUrl" (click)='getPrevious()' class="btn">Previous</button>
     </section>
     </section>
-    <section class="section-lg">
+    <section class="">
     <img class="path" src="assets/img/path4.png" />
 
     <div class="col-md-12">
@@ -68,7 +66,7 @@
     </div>
     </div>
     </section>
-    <section class="section section-lg section-coins">
+    <section class="">
     <img class="path" src="assets/img/path3.png" />
 
     <div class="container">

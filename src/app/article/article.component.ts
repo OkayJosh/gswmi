@@ -17,7 +17,7 @@ export class ArticleComponent implements OnInit {
     this.getContentById(id);
   }
 
-  getContentById(id:string){
+  getContentById(id:number){
     this.articleService.getArticle(id).subscribe((data:any)=>{
       this.res=data;
       this.title=this.res['title'];

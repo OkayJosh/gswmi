@@ -40,7 +40,7 @@ export class ArticlesComponent implements OnInit{
   }
 
   getContentById(id:number){
-    this.router.navigate(['blog-details'], {queryParams: {id: id}});
+    this.router.navigate(['blog-details', id ], {queryParams: {id: id}});
   }
   getNext(){
     this.articleService.getNextArticle(this.nextUrl).subscribe(

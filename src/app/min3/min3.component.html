@@ -22,11 +22,20 @@
                         </div>
                         </div>
                         <div class="col-7 col-md-8">
-                        <div class="numbers">
-                            Title<p>{{post.name}}</p>
-                           Price  <p>N{{post.price}}</p>
-                            <p class="card-category"></p>
-                        </div>
+                            <div class="container">
+                                <div class="card">
+                                    <div class="number"> 
+                                        Title<p>{{post.name}}</p>
+                                        Price  <p>N{{post.price}}</p>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-category text-center">
+                                            {{post.info}}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                     </div>

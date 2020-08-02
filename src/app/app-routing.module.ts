@@ -51,10 +51,10 @@ const routes: Routes = [
   { path: 'prayer', component: RequestModalComponent },
   { path: 'podcast', component: PodcastComponent },
   { path: 'blog', component: ArticlesComponent},
-  { path: 'blog-details', component: ArticleComponent},
+  { path: 'blog-details/:id', component: ArticleComponent},
   { path: 'podcast-details', component: Min4Component},
   { path: 'prayer-list', component: PrayerlistComponent},
-  { path: 'prayer-details/:id', component: PrayerdetailsComponent},
+  { path: 'prayer-details', component: PrayerdetailsComponent},
   { path: 'podcastlist', component: PodcastlistComponent},
   { path: 'publications', component: Min3Component}, //publications
   { path: 'ministries', component: MinitryComponent},
