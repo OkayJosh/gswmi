@@ -1,5 +1,5 @@
 <div class="wrapper">
-    <div class="container text-center pt-5">
+    <div class="container text-center pt-5 pt-5 mt-5">
         <div class="col-12 col-md-12 col-sm-12 pt-5">
         <ngb-carousel *ngIf="minstry">
             <ng-template ngbSlide *ngFor="let min of minstry">
@@ -70,6 +70,38 @@
     <button *ngIf="prevoiusUrl" (click)='getPrevious()' class="btn">Previous</button>
     </section>
     </section>
+    <section class="">
+        <section class="">
+          <div class="container">
+            <div class="row row-grid justify-content-between">
+              <div class="col-md-12 mt-lg-5 p-2 m-2">
+                <div class="row" *ngFor='let min of minstry'>
+                  <div class="col-lg-12 col-sm-12">
+                    <div class="card card-stats bg-default p-2">
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-5 col-md-4">
+                            <div class="icon-big text-center icon-warning">
+                              <i class="tim-icons icon-volume-98 text-white"> </i>
+                            </div>
+                          </div>
+                          <div class="col-7 col-md-8" routerLink="/podcastlist">
+                            <div class="numbers">
+                              <!-- <p class="card-title">3,653</p> -->
+                              <p></p>
+                              <p class="card-category">{{min.name}}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
     <section class="">
     <img class="path" src="assets/img/path4.png" />
 
