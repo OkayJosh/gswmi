@@ -14,23 +14,20 @@
     </div>   
     <section class="">
     <section class="">
-    <div class="container" *ngFor='let min of minstry'>
+    <div class="container mt-5" *ngFor='let min of minstry'>
         <div
         id='' class="row row-grid justify-content-between align-items-center text-left"
         >
-        <div class="col-lg-6 col-md-7 col-sm-12" style="color: rgb(19, 1, 1)!important;">
-            <h1 id="dispalynone" class="text-white text-info" >
+        <div class="col-lg-6 col-md-7 col-sm-12" >
+            <h1 id="dispalynone" class="text-white text-info"style="color:#196ceaed !important" >
             {{min.name}}  <br />
             </h1>
             
             <h4>
-                <p class="text-white mb-5 pt-5" >
+                <p class="text-white" >
                 {{min.info}}
             </p>
             </h4>
-
-            <div class="btn-wrapper mb-3">
-            </div>
             <div class="btn-wrapper">
             <a
             class="btn btn-icon btn-neutral btn-round btn-simple mr-1"
