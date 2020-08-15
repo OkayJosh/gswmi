@@ -42,4 +42,13 @@ export class ContactUsComponent implements OnInit {
     this.contactForm.reset()
     
   }
+
+  onwhatsappclick(){
+    alert("Connect with us on whatsapp");
+    window.location.href="https://chat.whatsapp.com/BHMRZCAoI6NFlbWuFpdJAy"
+  }
+  ontelegramclick(){
+    alert("Connect with us on Telegram");
+    window.location.href="https://chat.whatsapp.com/BHMRZCAoI6NFlbWuFpdJAy"
+  }
 }

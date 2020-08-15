@@ -3,6 +3,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Ministry } from '../models/ministry';
 import { Observable } from 'rxjs/Observable';
 import { MinistryService } from '../ministry.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-minitry',
@@ -16,7 +17,7 @@ export class MinitryComponent implements OnInit {
   prevoiusUrl: any;
   nextUrl: any;
   collectionSize: any;
-  constructor(private minService: MinistryService, private modalService: NgbModal) { }
+  constructor(private minService: MinistryService, private modalService: NgbModal, private router: Router) { }
 
 
   ngOnInit(){
@@ -61,5 +62,9 @@ export class MinitryComponent implements OnInit {
         console.log(error.error);
       }
     );    
+  }
+
+  getContentById(id:number){
+    this.router.navigate(['min-details', id ], {queryParams: {id: id}});
   }
 }

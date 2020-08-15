@@ -26,6 +26,7 @@ import { CreateMinComponent } from './create-min/create-min.component'
 import { EventComponent } from './event/event.component'
 import { CreateEventComponent} from './create-event/create-event.component'
 import { SpeakersComponent } from './speakers/speakers.component';
+import { MinDetailsComponent } from './min-details/min-details.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent },
@@ -53,6 +54,7 @@ const routes: Routes = [
   { path: 'blog', component: ArticlesComponent},
   { path: 'blog-details/:id', component: ArticleComponent},
   { path: 'podcast-details', component: Min4Component},
+  { path: 'min-details/:id', component: MinDetailsComponent},
   { path: 'prayer-list', component: PrayerlistComponent},
   { path: 'prayer-details', component: PrayerdetailsComponent},
   { path: 'podcastlist', component: PodcastlistComponent},

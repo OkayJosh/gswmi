@@ -10,8 +10,12 @@
 
         <div class="col-lg-12 col-12-6 col-sm-12">
           <h1> Read cearfully the words of the Spirit and Find Inspiration from God:</h1>
-          <div class="col-lg-12 col-12-6 col-sm-12">
+          <div *ngIf="!this.featured_image" class="col-lg-12 col-12-6 col-sm-12">
             <img class="fit-picture" src="assets/img/fabien-bazanegue.jpg"
+            alt="{{this.title}}">
+          </div>
+          <div *ngIf="this.featured_image" class="col-lg-12 col-12-6 col-sm-12">
+            <img class="fit-picture" src="{{this.featured_image}}"
             alt="{{this.title}}">
           </div>
           <div class="col-12">    

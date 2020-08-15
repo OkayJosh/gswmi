@@ -13,61 +13,6 @@
         </div>    
     </div>   
     <section class="">
-    <section class="">
-    <div class="container mt-5" *ngFor='let min of minstry'>
-        <div
-        id='' class="row row-grid justify-content-between align-items-center text-left"
-        >
-        <div class="col-lg-6 col-md-7 col-sm-12" >
-            <h1 id="dispalynone" class="text-white text-info"style="color:#196ceaed !important" >
-            {{min.name}}  <br />
-            </h1>
-            
-            <h4>
-                <p class="text-white" >
-                {{min.info}}
-            </p>
-            </h4>
-            <div class="btn-wrapper">
-            <a
-            class="btn btn-icon btn-neutral btn-round btn-simple mr-1"
-            href="{{min.link}}"
-            target="_blank"
-            >
-            <i class="fab fa-telegram"> </i>
-            </a>
-            </div>
-        </div>
-        <div class="col-lg-6 col-md-5 col-sm-12">
-            <div class="container">
-            <p class="text-white mb-5 pt-5"*ngIf='min.vlink' >
-                <iframe width="100%" height="315" src="https://www.youtube.com/embed/{{min.vlink}}" 
-                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </p>
-            </div>
-            <div class="btn-wrapper">
-            </div>
-            <div class="btn-wrapper">
-            <a
-            class="btn btn-icon btn-neutral btn-round btn-simple mr-1"
-            href="{{min.link}}"
-            target="_blank"
-            >
-            <i class="fab fa-whatsapp"> </i>
-            </a>
-
-            </div>
-        </div>
-        <p><br/></p>
-        <div class="align-items-center"><h1 class="text-white " ></h1></div>
-
-        </div>
-    </div>
-    <button *ngIf="nextUrl" (click)='getNext()' class="btn">Next</button>
-    <button *ngIf="prevoiusUrl" (click)='getPrevious()' class="btn">Previous</button>
-    </section>
-    </section>
-    <section class="">
         <section class="">
           <div class="container">
             <div class="row row-grid justify-content-between">
@@ -76,13 +21,13 @@
                   <div class="col-lg-12 col-sm-12">
                     <div class="card card-stats bg-default p-2">
                       <div class="card-body">
-                        <div class="row">
+                        <div class="row" (click)="getContentById(min.id)">
                           <div class="col-5 col-md-4">
                             <div class="icon-big text-center icon-warning">
                               <i class="tim-icons icon-volume-98 text-white"> </i>
                             </div>
                           </div>
-                          <div class="col-7 col-md-8" routerLink="/podcastlist">
+                          <div class="col-7 col-md-8">
                             <div class="numbers">
                               <!-- <p class="card-title">3,653</p> -->
                               <p></p>
@@ -97,6 +42,8 @@
               </div>
             </div>
           </div>
+          <button *ngIf="nextUrl" (click)='getNext()' class="btn">Next</button>
+          <button *ngIf="prevoiusUrl" (click)='getPrevious()' class="btn">Previous</button>
         </section>
       </section>
     <section class="">
@@ -104,16 +51,6 @@
 
     <div class="col-md-12">
     <div class="card card-chart card-plain">
-        <div class="card-header">
-        <div class="row">
-            <div class="col-sm-6 text-left">
-            <hr class="line-primary" />
-
-            <h5 class="card-category">Find Advert </h5>
-            <h2 class="card-title">Here</h2>
-            </div>
-        </div>
-        </div>
         <div class="card-body">
             <app-adverts></app-adverts>
         </div>
@@ -124,15 +61,6 @@
     <img class="path" src="assets/img/path3.png" />
 
     <div class="container">
-    <div class="row">
-        <div class="col-md-4">
-        <hr class="line-info" />
-
-        <h1>
-            How Can We Pray For You?
-        </h1>
-        </div>
-    </div>
     <div class="row">
         <div class="col-md-12">
         <div class="card card-coin card-plain">

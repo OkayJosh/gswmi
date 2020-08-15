@@ -2,7 +2,7 @@
     <div class="container mt-5 pt-5" >
         <div class="container mt-5" id="" data-version="5.4.1">         
             <div class="slider-content">
-                <h2>Find your latest Inspirational Writeup here<br> with Gbenga Samuel Wemimo! and get educated on the things of the Spirit</h2>
+                <h2>GSWMI Holy Spirit Inspired Stories</h2>
                 <div class="text">A friend loves at all times, and a brother is born for a time of adversity.</div>
                 
             </div>
@@ -17,7 +17,7 @@
               </div>
               <div class="carousel-caption">
                 <h3>The way to God</h3>
-                <p>Make me know Your ways, O Lord; Teach me Your paths.</p>
+                <h4><b>Make me know Your ways, O Lord; Teach me Your paths.</b></h4>
               </div>
             </ng-template>
             <ng-template ngbSlide>
@@ -26,8 +26,8 @@
               </div>
               <div class="carousel-caption">
                 <h3>Teach Us</h3>
-                <p>That He may teach us concerning His ways
-                  And that we may walk in His paths.</p>
+                <h4><b>That He may teach us concerning His ways
+                  And that we may walk in His paths.</b></h4>
               </div>
             </ng-template>
             <ng-template ngbSlide>
@@ -35,35 +35,26 @@
                 <img [src]="images[2]" alt="Random third slide">
               </div>
               <div class="carousel-caption">
-                <h3>Feel God</h3>
-                <p>Behold, the heaven and heaven of heavens cannot contain thee.</p>
+                <h3 style="color:rgb(255, 94, 0)">Feel God</h3>
+                <h4 style="color:rgb(255, 94, 0)"><b>Behold, the heaven and heaven of heavens cannot contain thee.</b></h4>
               </div>
             </ng-template>
           </ngb-carousel> 
         </div>      
-      </div>
-</section>    
-<section class=" section-lg">
+      </div> 
+
     <div class="container">
-        <ul class="social-icon-one alternate">
-            <li class="share">Share:</li>
-            <li class="btn btn-icon btn-simple btn-round btn-neutral"><a href="#"><span class="fab fa-facebook"></span></a></li>
-            <li class="btn btn-icon btn-simple btn-round btn-neutral"><a href="#"><span class="fab fa-twitter"></span></a></li>
-            <li class="btn btn-icon btn-simple btn-round btn-neutral"><a href="#"><span class="fab fa-google-plus"></span></a></li>
-            <li class="btn btn-icon btn-simple btn-round btn-neutral"><a href="#"><span class="fab fa-linkedin"></span></a></li>
-            <li class="btn btn-icon btn-simple btn-round btn-neutral"><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
-        </ul>
-        <div class="row "> <h1>Latest Post: </h1></div>
-        <div class="row row-grid">
-        <div class="col-lg-6 col-md-6 col-sm-12" *ngFor="let post of article" >
+        <div class="row "> <h1>Latest Stories: </h1></div>
+        <div class="row" style="padding:0em 0em 0em">
+        <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let post of article" >
             <div class="card" style="width: 20rem;">
                 <figure *ngIf="post.featured_image">
                     <img class="fit-picture" src="{{post.featured_image}}"
                             alt="{{post.title}}">
                     <figcaption>{{post.title}}</figcaption>
                 </figure> 
-                <figure>
-                    <img *ngIf="!post.featured_image" class="fit-picture" src="assets/img/fabien-bazanegue.jpg"
+                <figure *ngIf="!post.featured_image">
+                    <img class="fit-picture" src="assets/img/fabien-bazanegue.jpg"
                             alt="{{post.title}}">
                     <figcaption>{{post.title}}</figcaption>
                 </figure>
@@ -71,6 +62,13 @@
                 <h4 class="card-title">{{post.title}}</h4>
                 <p class="card-text" [innerHTML]="post.summary"></p>
                 <button (click)="getContentById(post.id)" type="submit" class="btn">Read more</button>
+                <ul class="social-icon-one alternate">
+                  <li class="btn btn-icon btn-simple btn-round btn-neutral"><a href="#"><span class="fab fa-facebook"></span></a></li>
+                  <li class="btn btn-icon btn-simple btn-round btn-neutral"><a href="#"><span class="fab fa-twitter"></span></a></li>
+                  <li class="btn btn-icon btn-simple btn-round btn-neutral"><a href="#"><span class="fab fa-google-plus"></span></a></li>
+                  <li class="btn btn-icon btn-simple btn-round btn-neutral"><a href="#"><span class="fab fa-linkedin"></span></a></li>
+                  <li class="btn btn-icon btn-simple btn-round btn-neutral"><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
+              </ul>
             </div>
             </div>
         </div>

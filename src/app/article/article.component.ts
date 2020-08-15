@@ -10,6 +10,7 @@ export class ArticleComponent implements OnInit {
   res: any;
   title: any;
   content: any;
+  featured_image: any;
   constructor(private articleService:ArticleService, private route: ActivatedRoute) { }
 
   ngOnInit(){
@@ -22,6 +23,7 @@ export class ArticleComponent implements OnInit {
       this.res=data;
       this.title=this.res['title'];
       this.content=this.res['text'];
+      this.featured_image = this.res['featured_image'];
       console.log(this.res);
     });
   }
