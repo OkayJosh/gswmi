@@ -11,6 +11,7 @@
             <div class="row clearfix">
                 <!--Form Column-->
                 <div class="form-column col-lg-8 col-md-12 col-sm-12 ">
+                    <h4>Connect with us:</h4>
                     <button
                     class="btn btn-icon btn-simple btn-round btn-neutral mr-1"
                     (click)="onwhatsappclick()"
@@ -26,7 +27,7 @@
                     <div class="sec-title">
                         <h2>Contact Form</h2>
                     </div>
-                    <div class="text">We Answer during 24 hours in working days.</div>
+                    <h4 class="text">We Answer during 24 hours in working days.</h4>
                     <!--Contact Form-->
                     <div *ngIf='error'> {{ error.error }}</div>
                     <div class="contact-form">
@@ -97,3 +98,14 @@
     </div>
     </div>
 </div>
+<section class="">
+    <img class="path" src="assets/img/path4.png" />
+
+    <div class="col-md-12">
+      <div class="card card-chart card-plain">
+        <div class="card-body">
+            <app-event></app-event>
+        </div>
+      </div>
+    </div>
+  </section>
