@@ -1,7 +1,7 @@
 // style for the landing page
 .index-page {
   .page-header {
-    height: 100vh;
+    height: inherit;
 
     .container {
       > .content-center {
@@ -112,7 +112,7 @@
       );
       // content: "";
       position: absolute;
-      height: 100vh;
+      height: inherit;
       width: 100%;
       opacity: 0.5;
     }
