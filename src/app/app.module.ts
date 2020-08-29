@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {  JwtModule, JWT_OPTIONS } from '@auth0/angular-jwt'
-
+import { NgxSocialShareModule } from 'ngx-social-share';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; 
@@ -81,7 +81,7 @@ import { MinDetailsComponent } from './min-details/min-details.component';
     HttpClientModule,
     NgbModule,
     // // add social buttons module to NgModule imports
-    // JwSocialButtonsModule,
+    NgxSocialShareModule,
     EditorModule,
     // NgxUiLoaderModule, // import NgxUiLoaderModule
     // NgxUiLoaderRouterModule, // import NgxUiLoaderRouterModule. By default, it will show foreground loader.
