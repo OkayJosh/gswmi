@@ -8,7 +8,7 @@
             </div>
             </ng-template>
         </ngb-carousel> 
-        </div>>    
+        </div>   
     </div> 
     <section class="">
         <section class="">
@@ -45,16 +45,14 @@
     <section class="">
     <section class="">
     <div class="container" *ngFor='let speaker of speakers'>
-        <div
-        id='' class="row row-grid justify-content-between align-items-center text-left"
-        >
+        <div id='' class="row row-grid justify-content-between align-items-center text-left">
         <div class="col-lg-6 col-md-7 col-sm-12">
             <h1 id="dispalynone" class="text-white text-info">
                 {{speaker.last_name}} {{speaker.first_name}}  <br />
             </h1>
             
             <h4>
-                <p class="text-white mb-5 pt-5" >
+                <p class="text-white" >
                 {{speaker.bio}}
             </p>
             </h4>
@@ -63,14 +61,13 @@
             <span class="text-white text-info">  </span>
             <div class="container">
             
-            <p class="text-white mb-5 pt-5"*ngIf='speaker.profile_image' >
+            <p class="text-white"*ngIf='speaker.profile_image' >
                 <img src="{{speaker.profile_image}}" alt="{{speaker.username}}">
             </p>
             </div>
         </div>
         <p><br/></p>
         <div class="align-items-center"><h1 class="text-white" ></h1></div>
-
         </div>
     </div>
     <button *ngIf="nextUrl" (click)='getNext()' class="btn">Next</button>
