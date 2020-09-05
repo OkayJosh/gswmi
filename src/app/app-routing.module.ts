@@ -27,6 +27,7 @@ import { EventComponent } from './event/event.component'
 import { CreateEventComponent} from './create-event/create-event.component'
 import { SpeakersComponent } from './speakers/speakers.component';
 import { MinDetailsComponent } from './min-details/min-details.component';
+import { GiveComponent } from './give/give.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent },
@@ -62,6 +63,7 @@ const routes: Routes = [
   { path: 'ministries', component: MinitryComponent},
   { path: 'events', component: EventComponent},
   { path: 'speakers', component: SpeakersComponent},
+  { path: 'give', component: GiveComponent},
 ];
 
 @NgModule({

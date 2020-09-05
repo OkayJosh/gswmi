@@ -1,0 +1,353 @@
+<div class="wrapper">
+    <div class="page-header" style="padding:3em 0em 0em">
+  
+      <!-- <img class="path2" src="assets/img/gswmi.jpeg" />   -->
+  
+      <img class="path" src="assets/img/blob.png" />
+  
+      <img class="path2" src="assets/img/path2.png" />
+  
+      <img class="shapes triangle" src="assets/img/triunghiuri.png" />
+  
+      <img class="shapes wave" src="assets/img/waves.png" />
+  
+      <img class="shapes squares" src="assets/img/patrat.png" />
+  
+      <img class="shapes circle" src="assets/img/cercuri.png" />
+   
+      <div class="text-center">
+        <div class="col-12 col-md-12 col-sm-12 mt-5 pt-3">
+            <div class="align-items-center"></div>
+            <h4>We support a lot of People and Ministries with varying degrees of need.
+              If the Holy Spirit has asked you to reach out to such people and/or Ministries through us, kindly do so.
+              You can also support Gbenga Samuel-Wemimo's Ministry as he takes the gospel of Jesus in a unique way to the whole world
+              financially by crediting <code>account no 1223897578 Access Bank</code> and/or <code>Guarantee Trust Bank Account no 0147873287</code> 
+              Kindly indicate the purpose of your donation clearly through a mail or a DM
+              <p><b>Thank you and God bless you</b></h4>
+          </div>
+        </div>
+        <div class="col-12 col-md-12 col-sm-12 mt-5 pt-3">
+          <app-adverts></app-adverts>
+        </div>    
+      </div>   
+    </div>
+    <section class="" style="padding:0em 0em 0em">
+      <section class="" style="padding:0em 0em 0em">
+        <div class="" style="padding:0em 0em 0em">
+          <div
+          id='' class="row row-grid justify-content-between align-items-center text-left"
+          >
+            <div class="col-lg-6 col-md-7 col-sm-12  mt-sm-5">
+              <h1 id="dispalynone" class="text-white text-info">
+                Gbenga Samuel Wemimo Ministry  <br />
+    
+                <span class="text-white text-info"> International </span>
+              </h1>
+              <h4>
+                Gbenga Samuel-Wemimo Ministry International, (GSWMI), has been 
+                raised by the Holy Spirit to equip the saints as they sort out 
+                their Homo Christus (Christ-kind) status in their walk with the
+                  Holy Spirit. The Messianic Community is not ordinary, 
+                  and believers are not ordinary by any standard. <br/> <br/>
+                  The ministry's mandate is to bring neppios (Baby Christians) to the point of 
+                  maturity in the things of the Spirit by the leading of the Holy 
+                  Ghost. Believers will henceforth live as Christ 
+                and The Word instructs, not tossed to and fro by the elements 
+                of this world.
+              </h4>
+              <section class="">
+                <section class="">
+                  <div class="container">
+                    <div class="row row-grid justify-content-between">
+                      <div class="col-md-12 mt-lg-5 p-2 m-2">
+                        <div class="row">
+                          <div class="col-lg-12 col-sm-12">
+                            <div class="card card-stats bg-default p-2">
+                              <div class="card-body">
+                                <div class="row">
+                                  <div class="col-5 col-md-4">
+                                    <div class="icon-big text-center icon-warning">
+                                      <i class="tim-icons icon-volume-98 text-white"> </i>
+                                    </div>
+                                  </div>
+                                  <div class="col-7 col-md-8">
+                                    <div class="numbers">
+                                      <p class="card-title">4</p>
+                                      <p></p>
+                                      <p class="card-category">Latest Stories Below</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </section>
+              <div class="row" *ngFor="let post of article">
+                <div class="col-lg-4 col-sm-12">
+                  <figure *ngIf="post.featured_image">
+                    <img class="fit-picture" src="{{post.featured_image}}"
+                            alt="{{post.title}}">
+                    <figcaption>{{post.title}}</figcaption>
+                </figure> 
+                <figure *ngIf="!post.featured_image">
+                    <img class="fit-picture" src="assets/img/fabien-bazanegue.jpg"
+                            alt="{{post.title}}">
+                    <figcaption>{{post.title}}</figcaption>
+                </figure>
+                </div>
+                <div class="col-lg-8 col-sm-12"> 
+                  <div class="row"><h4 class="card-title" (click)="getContentById(post.id)"><a>{{post.title}}</a></h4></div>
+                  <div class="row"><p class="card-text" [innerHTML]="post.summary"></p></div>
+              </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-5 col-sm-12  mt-sm-5">
+              <h1 id="dispalynone" class="text-white text-info">
+                About GSWMI<br />
+              </h1>
+                <span class="text-white text-info">  </span>
+                <div class="container">
+                
+                <p class="text-white mb-5 pt-5" >
+                  <iframe width="100%" height="315" src="https://www.youtube.com/embed/IP5wSbzJu2w?rel=0&autoplay=1" 
+                  frameborder="0" allow="accelerometer; autoplay=1&mute=1; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </p>
+                </div>
+                <section class="">
+                  <section class="">
+                    <div class="container">
+                      <div class="row row-grid justify-content-between">
+                        <div class="col-md-12 mt-lg-5 p-2 m-2">
+                          <div class="row">
+                            <div class="col-lg-12 col-sm-12">
+                              <div class="card card-stats bg-default p-2">
+                                <div class="card-body">
+                                  <div class="row">
+                                    <div class="col-5 col-md-4">
+                                      <div class="icon-big text-center icon-warning">
+                                        <i class="tim-icons icon-volume-98 text-white"> </i>
+                                      </div>
+                                    </div>
+                                    <div class="col-7 col-md-8">
+                                      <div class="numbers">
+                                        <p class="card-title">3</p>
+                                        <p></p>
+                                        <p class="card-category">Latest Podcast Below</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </section>
+                <div class="row" *ngFor="let pod of podcastlist| slice:0:3;">
+                  <div class="col-lg-4 col-sm-12">
+                    <figure *ngIf="pod.image_url">
+                      <img class="fit-picture" src="{{pod.image_url}}"
+                              alt="{{pod.title}}">
+                      <figcaption>{{pod.title}}</figcaption>
+                  </figure> 
+                  <figure *ngIf="!pod.image_url">
+                      <img class="fit-picture" src="assets/img/fabien-bazanegue.jpg"
+                              alt="{{pod.title}}">
+                      <figcaption>{{pod.title}}</figcaption>
+                  </figure>
+                  </div>
+                  <div class="col-lg-8 col-sm-12"> 
+                    <div class="row"><a><h4 class="card-title" (click)="getPodcastById(pod.episode_id)">{{pod.title}}</h4></a></div>
+                    <div class="row"><p class="card-text" [innerHTML]="pod.summary"></p></div>
+                </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+    <section class="">
+      <section class="">
+        <div class="container">
+          <div class="row row-grid justify-content-between">
+            <div class="col-md-5 mt-lg-5 p-2 m-2">
+              <div class="row ">
+                <div class="col-lg-6 col-sm-12" routerLink="/ministries">
+                  <div class="card card-stats p-2">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-5 col-md-4">
+                          <div class="icon-big text-center icon-warning">
+                            <i class="tim-icons icon-planet text-warning"> </i>
+                          </div>
+                        </div>
+                        <div class="col-7 col-md-8">
+                          <div class="numbers" >
+                            <!-- <p class="card-title">4 Solid</p> -->
+                            <p></p>
+                            <p class="card-category">Ministries</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-sm-12" routerLink="/podcastlist">
+                  <div class="card card-stats upper bg-default p-2">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-5 col-md-4">
+                          <div class="icon-big text-center icon-warning">
+                            <i class="tim-icons icon-volume-98 text-white"> </i>
+                          </div>
+                        </div>
+                        <div class="col-7 col-md-8" >
+                          <div class="numbers">
+                            <!-- <p class="card-title">3,653</p> -->
+                            <p></p>
+                            <p class="card-category">Live Radio</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6 col-sm-12" routerLink="/podcastlist">
+                  <div class="card card-stats p-2">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-5 col-md-4">
+                          <div class="icon-big text-center icon-warning">
+                            <i class="tim-icons icon-sound-wave text-info"> </i>
+                          </div>
+                        </div>
+                        <div class="col-7 col-md-8">
+                          <div class="numbers">
+                            <!-- <p class="card-title">593</p> -->
+                            <p></p>
+                            <p  class="card-category">Podcast</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-sm-12" routerLink="/blog">
+                  <div class="card card-stats p-2">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-5 col-md-4">
+                          <div class="icon-big text-center icon-warning">
+                            <i class="tim-icons icon-credit-card text-success">
+                            </i>
+                          </div>
+                        </div>
+                        <div class="col-7 col-md-8">
+                          <div class="numbers">
+                            <!-- <p class="card-title">10,783</p> -->
+                            <p></p>
+                            <p class="card-category">Stories</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <section class="">
+                <section class="">
+                  <div class="container">
+                    <div class="row row-grid justify-content-between">
+                      <div class="col-md-12 mt-lg-5 p-2 m-2">
+                        <div class="row">
+                          <div class="col-lg-12 col-sm-12">
+                            <div class="card card-stats bg-default p-2">
+                              <div class="card-body">
+                                <div class="row">
+                                  <div class="col-5 col-md-4">
+                                    <div class="icon-big text-center icon-warning">
+                                      <i class="tim-icons icon-volume-98 text-white"> </i>
+                                    </div>
+                                  </div>
+                                  <div class="col-7 col-md-8">
+                                    <div class="numbers">
+                                      <!-- <p class="card-title">3,653</p> -->
+                                      <p></p>
+                                      <p class="card-category">GIVE</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </section>
+              <div class="pl-md-5">
+                <div class="align-items-center"></div>
+                <h4>We support a lot of People and Ministries with varying degrees of need.
+                  If the Holy Spirit has asked you to reach out to such people and/or Ministries through us, kindly do so.
+                  You can also support Gbenga Samuel-Wemimo's Ministry as he takes the gospel of Jesus in a unique way to the whole world
+                  financially by crediting <code>account no 1223897578 Access Bank</code> and/or <code>Guarantee Trust Bank Account no 0147873287</code> 
+                  Kindly indicate the purpose of your donation clearly through a mail or a DM
+                  <p><b>Thank you and God bless you</b></h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+    <section class="pt-5 mt-sm-3">
+      <img class="path" src="assets/img/path3.png" />
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card card-coin card-plain">
+              <div class="card-header">
+                <img class="img-center img-fluid" src="assets/img/gswmi.jpeg" />
+              </div>
+              <div class="card-body">
+  
+                <div class="row text-center">
+                  <h4><span class=""> Welcome, friend. 
+              These are uncertain times filled with anxiety and suffering, 
+              and you may be wrestling with difficult questions, 
+              or perhaps need a message of encouragement or hope. 
+              May we offer to pray for you and your concerns? </span> </h4>
+                </div>
+              </div>
+              <div class="card-footer text-center">
+                <button type="button" class="btn btn-info btn-simple" routerLink="/prayer">Submit Prayer Request</button> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="">
+      <img class="path" src="assets/img/path4.png" />
+  
+      <div class="col-md-12">
+        <div class="card card-chart card-plain">
+          <div class="card-body">
+            <app-adverts></app-adverts>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  
