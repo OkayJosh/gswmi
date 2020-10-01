@@ -5,14 +5,15 @@ const path = require('path');
 const app = express();
 
 
-//if(process.env.NODE_ENV === 'production') {
-//    app.use((req, res, next) => {
-//      if (req.header('x-forwarded-proto') !== 'https')
-//        res.redirect(`https://${req.header('host')}${req.url}`)
-//      else
-//        next()
-//    })
-//  }
+if(process.env.NODE_ENV === 'production') {
+    app.use((req, res, next) => {
+      if (req.header('x-forwarded-proto') !== 'https')
+        //res.redirect(`https://${req.header('host')}${req.url}`)
+          res.redirect(`http://${req.header('host')}${req.url}`)
+      else
+        next()
+    })
+}
 
 // fix to use compression
 app.use(compression());
@@ -32,4 +33,4 @@ app.get('/*', function (req, res) {
 })
 
 //default Heroku PORT
-//app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 3000);
