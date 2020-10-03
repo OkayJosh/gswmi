@@ -5,15 +5,15 @@ const path = require('path');
 const app = express();
 
 
-//if(process.env.NODE_ENV === 'production') {
-//    app.use((req, res, next) => {
-//      if (req.header('x-forwarded-proto') !== 'https')
-        //res.redirect(`https://${req.header('host')}${req.url}`)
+if(process.env.NODE_ENV === 'production') {
+    app.use((req, res, next) => {
+      if (req.header('x-forwarded-proto') !== 'https')
+        res.redirect(`https://${req.header('host')}${req.url}`)
 //          res.redirect(`http://${req.header('host')}${req.url}`)
-//      else
-//        next()
-//    })
-//}
+      else
+        next()
+    })
+}
 
 // fix to use compression
 app.use(compression());
